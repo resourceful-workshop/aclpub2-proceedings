@@ -1,0 +1,18 @@
+book_title: Proceedings of the Second Workshop on Resources and Representations for Under-Resourced Languages and Domains (RESOURCEFUL-2023)
+event_name: The Second Workshop on Resources and Representations for Under-Resourced Languages and Domains
+volume_name: 1
+cover_subtitle: Proceedings of the Workshop
+anthology_venue_id: resourceful
+start_date: 2020-05-22
+end_date: 2020-05-22
+isbn: 
+location: Tórshavn, the Faroe Islands
+editors:
+  - first_name: Simon
+    last_name: Dobnik
+  - first_name: Nikolai
+    last_name: Ilinykh
+  - first_name: Felix
+    last_name: Morger
+publisher: Association for Computational Linguistics
+#watermark_book_title: Proceedings of the Second Workshop on\\ Resources and Representations for Under-Resourced Languages and Domains (RESOURCEFUL-2023)

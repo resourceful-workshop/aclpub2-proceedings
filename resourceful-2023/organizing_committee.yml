@@ -1,0 +1,38 @@
+- members:
+  - first_name: Dana
+    institution: Språkbanken Text, University of Gothenburg, Sweden
+    last_name: Dannélls
+  - first_name: Simon
+    institution: CLASP, University of Gothenburg, Sweden
+    last_name: Dobnik
+  - first_name: Adam
+    institution: CLASP, University of Gothenburg, Sweden
+    last_name: Ek
+  - first_name: Stella
+    institution: University of Copenhagen, Denmark
+    last_name: Frank
+  - first_name: Nikolai
+    institution: CLASP, University of Gothenburg, Sweden
+    last_name: Ilinykh
+  - first_name: Beáta
+    institution: Uppsala University, Sweden
+    last_name: Megyesi
+  - first_name: Felix
+    institution: Språkbanken Text, University of Gothenburg, Sweden
+    last_name: Morger
+  - first_name: Joakim
+    institution: RISE and Uppsala University, Sweden
+    last_name: Nivre
+  - first_name: Magnus
+    institution: AI Sweden, Sweden
+    last_name: Sahlgren
+  - first_name: Sara
+    institution: Uppsala University, Sweden
+    last_name: Stymne
+  - first_name: Jörg
+    institution: University of Helsinki, Finland
+    last_name: Tiedemann
+  - first_name: Lilja
+    institution: University of Oslo, Norway
+    last_name: Øvrelid
+  role: Program Chairs
