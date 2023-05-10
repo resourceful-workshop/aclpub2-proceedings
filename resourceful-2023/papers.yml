@@ -320,16 +320,16 @@
     name: Pierre Beauguitte
     username: ~Pierre_Beauguitte1
   - emails: per.kummervold@nb.no
-    first_name: per.kummervold@nb.no
-    institution: NA
-    last_name: per.kummervold@nb.no
-    name: per.kummervold@nb.no
+    first_name: Per Egil
+    institution: National Library of Norway
+    last_name: Kummervold
+    name: Per Egil Kummervold
     username: per.kummervold@nb.no
   - emails: freddy.wetjen@nb.no
-    first_name: freddy.wetjen@nb.no
-    institution: NA
-    last_name: freddy.wetjen@nb.no
-    name: freddy.wetjen@nb.no
+    first_name: Freddy
+    institution: National Library of Norway
+    last_name: Wetjen
+    name: Freddy Wetjen
     username: freddy.wetjen@nb.no
   decision: Accept (Oral)
   file: 9.pdf
@@ -438,10 +438,10 @@
     semantic_scholar_id: https://www.semanticscholar.org/author/Luis-Chiruzzo/2287191
     username: ~Luis_Chiruzzo1
   - emails: santiago.egea@upf.edu
-    first_name: santiago.egea@upf.edu
-    institution: NA
-    last_name: santiago.egea@upf.edu
-    name: santiago.egea@upf.edu
+    first_name: Santiago
+    institution: Universitat Pompeu Fabra
+    last_name: Egea Gómez
+    name: Santiago Egea Gómez
     username: santiago.egea@upf.edu
   - dblp_id: https://dblp.uni-trier.de/pers/hd/s/Saggion:Horacio
     emails: horacio.saggion@upf.edu
@@ -529,32 +529,33 @@
   - emails: so-miyagawa@ninjal.ac.jp
     first_name: So
     homepage: https://somiyagawa.de/
+    institution: NINJAL
     last_name: Miyagawa
     name: So Miyagawa
     username: ~So_Miyagawa1
   - emails: kanji\_kato@nii.ac.jp
-    first_name: kanji\_kato@nii.ac.jp
-    institution: NA
-    last_name: kanji\_kato@nii.ac.jp
-    name: kanji\_kato@nii.ac.jp
+    first_name: Kanji
+    institution: CODH
+    last_name: Kato
+    name: Kanji Kato
     username: kanji\_kato@nii.ac.jp
   - emails: miho.zlazli@gmail.com
-    first_name: miho.zlazli@gmail.com
-    institution: NA
-    last_name: miho.zlazli@gmail.com
-    name: miho.zlazli@gmail.com
+    first_name: Miho
+    institution: SOAS
+    last_name: Zlazli
+    name: Miho Zlazli
     username: miho.zlazli@gmail.com
   - emails: nanajuu@gmail.com
-    first_name: nanajuu@gmail.com
-    institution: NA
-    last_name: nanajuu@gmail.com
-    name: nanajuu@gmail.com
+    first_name: Salvatore
+    institution: Daito Bunka University
+    last_name: Carlino
+    name:  Salvatore Carlino
     username: nanajuu@gmail.com
   - emails: machida.seira07@gmail.com
-    first_name: machida.seira07@gmail.com
-    institution: NA
-    last_name: machida.seira07@gmail.com
-    name: machida.seira07@gmail.com
+    first_name: Seira
+    institution: University of Hawaiʻi at Mānoa
+    last_name: Machida
+    name: Seira Machida
     username: machida.seira07@gmail.com
   decision: Accept (Poster)
   file: 16.pdf
