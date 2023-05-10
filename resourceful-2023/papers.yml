@@ -1,1110 +1,804 @@
-- abstract: The natural language generation (NLG) module in a task-oriented dialogue
-    system produces user-facing utterances conveying required information. Thus, it
-    is critical for the generated response to be natural and fluent. We propose to
-    integrate adversarial training to produce more human-like responses. The model
-    uses Straight-Through Gumbel-Softmax estimator for gradient computation. We also
-    propose a two-stage training scheme to boost performance. Empirical results show
-    that the adversarial training can effectively improve the quality of language
-    generation in both automatic and human evaluations. For example, in the RNN-LG
-    Restaurant dataset, our model AdvNLG outperforms the previous state-of-the-art
-    result by 3.6\% in BLEU.
+- abstract: The progress made in computer-assisted linguistics has led to huge advances
+    in natural language processing (NLP) research. This research often benefits linguistics
+    in a broader sense, e.g., by digitizing pre-existing data and analyzing ever larger
+    quantities of linguistic data in audio or visual form, such as sign language video
+    data using computer vision methods. A large portion of research conducted on sign
+    languages today is based in computer science and engineering, but much of this
+    research is unfortunately conducted without any input from experts on the linguistics
+    of sign languages or deaf communities. This is obvious from some of the language
+    used in the published research, which regularly contains ableist labels. In this
+    paper, I illustrate this by demonstrating the distribution of words in titles
+    of research papers indexed by Google Scholar. By doing so, we see that the number
+    of tech papers is increasing while the number of linguistics papers is (relatively)
+    decreasing, and that ableist language is more frequent in tech papers. By extension,
+    this suggest that much of the tech-related work on sign languages -- heavily under-researched
+    and under-resourced languages -- is conducted without collaboration and consultation
+    with deaf communities and experts, against ethical recommendations.
   attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - email: chezhu@microsoft.com
-    first_name: Chenguang
-    instituion: Microsoft Speech and Dialogue Research Group
-    last_name: Zhu
-    openreview: ~Chenguang_Zhu1
+  - emails: carl.borstell@uib.no
+    first_name: Carl
+    institution: University of Bergen
+    last_name: Börstell
+    name: Carl Börstell
+    orcid: https://orcid.org/0000-0001-7549-4648
+    username: ~Carl_Börstell1
+  decision: Accept (Oral)
+  file: 1.pdf
+  id: 1
+  openreview_id: EJQPjj_Xl-
+  pdf_file: 5c92ac89c127ef7c2d93b332454dba94cebd1302.pdf
+  title: Ableist Language Teching over Sign Language Research
+- abstract: In this paper, we present the newly compiled DA-ELEXIS Corpus, which is
+    one of the largest sense-annotated corpora available for Danish, and the first
+    one to be annotated with the Danish wordnet, DanNet. The corpus is part of a European
+    initiative, the ELEXIS project, and has corresponding parallel annotations in
+    nine other European languages. As such it functions as a cross-lingual evaluative
+    benchmark for a series of low and medium resourced European language. We focus
+    here on the Danish annotation process, i.e. on the annotation scheme including
+    annotation guidelines and a primary sense inventory constituted by DanNet as well
+    as the fall-back sense inventory namely The Danish Dictionary (DDO). We analyse
+    and discuss issues such as out of vocabulary (OOV) problems, problems with sense
+    granularity and missing senses (in particular for verbs), and how to semantically
+    tag multiword expressions (MWE), which prove to occur very frequently in the Danish
+    corpus. Finally, we calculate the inter-annotator agreement (IAA) and show how
+    IAA has improved during the annotation process. The openly available corpus contains
+    32,524 tokens of which sense annotations are given for all content words, amounting
+    to 7,322 nouns, 3,099 verbs, 2,626 adjectives, and 1,677 adverbs.
+  attributes:
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
+  authors:
+  - dblp_id: https://dblp.org/pid/15/1759
+    emails: bspedersen@hum.ku.dk
+    first_name: Bolette
+    institution: University of Copenhagen
+    last_name: Pedersen
+    middle_name: S.
+    name: Bolette S. Pedersen
+    username: ~Bolette_S._Pedersen1
+  - emails: sn@dsl.dk
+    first_name: Sanni
+    homepage: https://dsl.dk/medarbejdere/sn
+    institution: DSL
+    last_name: Nimb
+    name: Sanni Nimb
+    username: ~Sanni_Nimb1
+  - emails: saolsen@hum.ku.dk
+    first_name: Sussi
+    google_scholar_id: https://scholar.google.com/citations?view_op=list_works&hl=en&user=m7DDLtUAAAAJ
+    institution: University of Copenhagen
+    last_name: Olsen
+    name: Sussi Olsen
+    username: ~Sussi_Olsen1
+  - emails: tt@dsl.dk
+    first_name: Thomas
+    homepage: https://dsl.dk/medarbejdere/tt
+    last_name: Troelsgård
+    name: Thomas Troelsgård
+    username: ~Thomas_Troelsgård1
+  - emails: if@dsl.dk
+    first_name: Ida
+    institution: Det Danske Sprog- og Litteraturselskab
+    last_name: Flörke
+    name: Ida Flörke
+    username: ~Ida_Flörke1
+  - emails: jj@dsl.dk
+    first_name: Jonas
+    homepage: http://www.ordnet.dk/ddo
+    last_name: Jensen
+    name: Jonas Jensen
+    username: ~Jonas_Jensen1
+  - emails: hl@dsl.dk
+    first_name: Henrik
+    homepage: https://dsl.dk/medarbejdere/hl
+    institution: Society for Danish Language and Literature
+    last_name: Lorentzen
+    name: Henrik Lorentzen
+    username: ~Henrik_Lorentzen1
+  decision: Accept (Poster)
   file: 2.pdf
   id: 2
-  title: Boosting Naturalness of Language in Task-oriented Dialogues via Adversarial
-    Training
-  attachments:
-    - type: software
-      file: attachments/2.zip
-    - type: presentation
-      file: attachments/2.pptx
-- abstract:
-    It is important to define meaningful and interpretable automatic evaluation
-    metrics for open-domain dialog research. Standard language generation metrics
-    have been shown to be ineffective for dialog. This paper introduces the FED metric
-    (fine-grained evaluation of dialog), an automatic evaluation metric which uses
-    DialoGPT, without any fine-tuning or supervision. It also introduces the FED dataset
-    which is constructed by annotating a set of human-system and human-human conversations
-    with eighteen fine-grained dialog qualities. The FED metric (1) does not rely
-    on a ground-truth response, (2) does not require training data and (3) measures
-    fine-grained dialog qualities at both the turn and whole dialog levels. FED attains
-    moderate to strong correlation with human judgement at both levels.
+  openreview_id: zHcjO238lwV
+  pdf_file: 0101ba0feb952ca076fdb6d9ae5cc6d25b692285.pdf
+  title: The DA-ELEXIS Corpus - a Sense-Annotated Corpus for Danish with Parallel
+    Annotations for Nine European Languages
+- abstract: 'In this paper, we present an approach for translating word embeddings
+    from a majority language into 4 minority languages: Erzya, Moksha, Udmurt and
+    Komi-Zyrian. Furthermore, we align these word embeddings and present a novel neural
+    network model that is trained on English data to conduct sentiment analysis and
+    then applied on endangered language data through the aligned word embeddings.
+    To test our model, we annotated a small sentiment analysis corpus for the 4 endangered
+    languages and Finnish. Our method reached at least 56\% accuracy for each endangered
+    language. The models and the sentiment corpus will be released together with this
+    paper. Our research shows that state-of-the-art neural models can be used with
+    endangered languages with the only requirement being a dictionary between the
+    endangered language and a majority language.'
   attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 1
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Shikib
-    last_name: Mehri
-  - first_name: Maxine
-    last_name: Eskenazi
+  - emails: khldalnajjar@gmail.com
+    first_name: Khalid
+    google_scholar_id: https://scholar.google.com/citations?user=y4DW-KoAAAAJ&hl=en
+    homepage: https://www.khalidalnajjar.com
+    last_name: Alnajjar
+    name: Khalid Alnajjar
+    username: ~Khalid_Alnajjar1
+  - dblp_id: https://dblp.org/pid/219/5607.html
+    emails: sahkohamis@gmail.com
+    first_name: Mika
+    google_scholar_id: https://scholar.google.com/citations?user=uQ3O89IAAAAJ&hl=en
+    homepage: https://mikakalevi.com
+    institution: Rootroo Ltd
+    last_name: Hämäläinen
+    name: Mika Hämäläinen
+    orcid: https://orcid.org/0000-0001-9315-1278
+    semantic_scholar_id: https://www.semanticscholar.org/author/Mika-H%C3%A4m%C3%A4l%C3%A4inen/150213555
+    username: ~Mika_Hämäläinen1
+  - emails: jack.rueter@helsinki.fi
+    first_name: Jack
+    google_scholar_id: https://scholar.google.fi/citations?user=uKxNH-QAAAAJ&hl=fi
+    homepage: https://researchportal.helsinki.fi/en/persons/jack-rueter
+    institution: University of Helsinki
+    last_name: Rueter
+    name: Jack Rueter
+    orcid: https://orcid.org/0000-0002-3076-7929
+    username: ~Jack_Rueter1
+  decision: Accept (Poster)
   file: 4.pdf
   id: 4
-  archival: False
-  title: Unsupervised Evaluation of Interactive Dialog with DialoGPT
-- abstract: For the past 15 years, in computer-supported collaborative learning applications,
-    conversational agents have been used to structure group interactions in online
-    chat-based environments. A series of experimental studies has provided an empirical
-    foundation for the design of chat-based conversational agents that significantly
-    improve learning over no-support control conditions and static-support control
-    conditions.  In this demo, we expand upon this foundation, bringing conversational
-    agents to structure group interaction into physical spaces, with the specific
-    goal of facilitating collaboration and learning in workplace scenarios.
+  openreview_id: dRYzH5FOH0
+  pdf_file: 906fac6fa53bfba526de978597287f74715078fe.pdf
+  title: Sentiment Analysis Using Aligned Word Embeddings for Uralic Languages
+- abstract: "Extracting statements about causality from text documents is a challenging\
+    \ task in the absence of annotated training data. \nWe create a search system\
+    \ for causal statements about user-specified concepts by combining pattern matching\
+    \ of causal connectives with semantic similarity ranking, using a language model\
+    \ fine-tuned for semantic textual similarity.\nPreliminary experiments on a small\
+    \ test set from Swedish governmental reports show promising results in comparison\
+    \ to two simple baselines."
   attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Yansen
-    last_name: Wang
-  - first_name: R.
-    last_name: Murray
-    middle_name: Charles
-  - first_name: Haogang
-    last_name: Bao
-  - first_name: Carolyn
-    last_name: Rose
+  - emails: luise.durlich@ri.se
+    first_name: Luise
+    google_scholar_id: https://scholar.google.se/citations?user=QrjUmkAAAAAJ&hl=en
+    institution: Uppsala University
+    last_name: Dürlich
+    name: Luise Dürlich
+    orcid: https://orcid.org/0000-0003-3246-1664
+    username: ~Luise_Dürlich1
+  - dblp_id: https://dblp.org/pid/n/JoakimNivre
+    emails: joakim.nivre@ri.se
+    first_name: Joakim
+    google_scholar_id: https://scholar.google.co.uk/citations?user=lLBHtFUAAAAJ&hl=sv
+    homepage: https://www.ri.se/en/person/joakim-nivre
+    institution: Uppsala University
+    last_name: Nivre
+    name: Joakim Nivre
+    orcid: https://orcid.org/0000-0002-7873-3971
+    semantic_scholar_id: https://www.semanticscholar.org/author/Joakim-Nivre/1720988
+    username: ~Joakim_Nivre1
+  - dblp_id: https://dblp.org/pid/04/5096
+    emails: sara.stymne@lingfil.uu.se
+    first_name: Sara
+    google_scholar_id: https://scholar.google.com/citations?user=A-zhXEoAAAAJ&hl=en
+    homepage: https://cl.lingfil.uu.se/~sara/
+    last_name: Stymne
+    name: Sara Stymne
+    orcid: https://orcid.org/0000-0003-3726-9399
+    semantic_scholar_id: https://www.semanticscholar.org/author/Sara-Stymne/1713395
+    username: ~Sara_Stymne1
+  decision: Accept (Oral)
+  file: 5.pdf
+  id: 5
+  openreview_id: 8YwOi4hgNvD
+  pdf_file: b752e0a2971f41145b5df4f19ef001baab658dd4.pdf
+  title: What Causes Unemployment? Unsupervised Causality Mining from Swedish Governmental
+    Reports
+- abstract: 'The developments of deep learning in natural language processing (NLP)
+    in recent years have resulted in an unprecedented amount of computational power
+    and data required to train state-of-the-art NLP models. This makes lower-resource
+    languages, such as Swedish, increasingly more reliant on language transfer effects
+    from English since they do not have enough data to train separate monolingual
+    models. In this study, we investigate whether there is any potential loss in English-Swedish
+    language transfer by evaluating two types of language transfer on the GLUE/SweDiagnostics
+    datasets and comparing between different linguistic phenomena. The results show
+    that for an approach using machine translation for training there is no considerable
+    loss in overall performance nor by any particular linguistic phenomena, while
+    relying on pre-training of a multilingual model results in considerable loss in
+    performance. This raises questions about the role of machine translation and the
+    use of natural language inference (NLI) as well as parallel corpora for measuring
+    English-Swedish language transfer. '
+  attributes:
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
+  authors:
+  - emails: felix.morger@gu.se
+    first_name: Felix
+    homepage: https://spraakbanken.gu.se/om/personal/felixmorger
+    institution: Göteborg University
+    last_name: Morger
+    name: Felix Morger
+    username: ~Felix_Morger1
+  decision: Accept (Oral)
   file: 7.pdf
   id: 7
-  archival: True
-  title: Agent-Based Dynamic Collaboration Support in a Smart Office Space
-- abstract: There is a growing interest in developing goal-oriented dialog systems
-    which serve users in accomplishing complex tasks through multi-turn conversations.
-    Although many methods are devised to evaluate and improve the performance of individual
-    dialog components, there is a lack of comprehensive empirical study on how different
-    components contribute to the overall performance of a dialog system. In this paper,
-    we perform a system-wise evaluation and present an empirical analysis on different
-    types of dialog systems which are composed of different modules in different settings.
-    Our results show that (1) a pipeline dialog system trained using fine-grained
-    supervision signals at different component levels often obtains better performance
-    than the systems that use joint or end-to-end models trained on coarse-grained
-    labels, (2) component-wise, single-turn evaluation results are not always consistent
-    with the overall performance of a dialog system, and (3) despite the discrepancy
-    between simulators and human users, simulated evaluation is still a valid alternative
-    to the costly human evaluation especially in the early stage of development.
+  openreview_id: cArFrwxlnKh
+  pdf_file: 72f1328f4aa6d30b86898722f7fa69d05c77e03e.pdf
+  title: Are There Any Limits to English-Swedish Language Transfer? A Fine-grained
+    Analysis Using Natural Language Inference
+- abstract: This paper explores the use of masked language modeling (MLM) for data
+    augmentation (DA), targeting structured sentiment analysis (SSA) for Norwegian
+    based on a dataset of annotated reviews. Considering the limited resources for
+    Norwegian language and the complexity of the annotation task, the aim is to investigate
+    whether this approach to data augmentation can help boost the performance. We
+    report on experiments with substituting words both inside and outside of sentiment
+    annotations, and we also present an error analysis, discussing some of the potential
+    pitfalls of using MLM-based DA for SSA, and suggest directions for future work.
   attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 3
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Ryuichi
-    last_name: Takanobu
-  - first_name: Qi
-    last_name: Zhu
-  - first_name: Jinchao
-    last_name: Li
-  - first_name: Baolin
-    last_name: Peng
-  - first_name: Jianfeng
-    last_name: Gao
-  - first_name: Minlie
-    last_name: Huang
+  - emails: larkkinn@gmail.com
+    first_name: Larisa
+    homepage: https://github.com/larkkin
+    last_name: Kolesnichenko
+    name: Larisa Kolesnichenko
+    username: ~Larisa_Kolesnichenko1
+  - dblp_id: https://dblp.org/pid/04/8218
+    emails: erikve@ifi.uio.no
+    first_name: Erik
+    google_scholar_id: https://scholar.google.com/citations?user=lbQyqGoAAAAJ
+    homepage: http://www.velldal.net/erik/
+    institution: University of Oslo
+    last_name: Velldal
+    name: Erik Velldal
+    semantic_scholar_id: https://www.semanticscholar.org/author/Erik-Velldal/2027091
+    username: ~Erik_Velldal1
+  - dblp_id: https://dblp.org/pid/03/6797
+    emails: liljao@ifi.uio.no
+    first_name: Lilja
+    google_scholar_id: https://scholar.google.no/citations?user=bQl3dcUAAAAJ&hl=no
+    homepage: https://www.mn.uio.no/ifi/english/people/aca/liljao/
+    institution: Dept. of Informatics, University of Oslo
+    last_name: Øvrelid
+    name: Lilja Øvrelid
+    semantic_scholar_id: https://www.semanticscholar.org/author/Lilja-%C3%98vrelid/2732223
+    username: ~Lilja_Øvrelid1
+  decision: Accept (Poster)
   file: 8.pdf
   id: 8
-  archival: True
-  title: Is Your Goal-Oriented Dialog Model Performing Really Well? Empirical Analysis
-    of System-wise Evaluation
-- abstract: The differences in decision making between behavioural models of voice
-    interfaces are hard to capture using existing measures for the absolute performance
-    of such models. For instance, two models may have a similar task success rate,
-    but very different ways of getting there. In this paper, we propose a general
-    methodology to compute the similarity of two dialogue behaviour models and investigate
-    different ways of computing scores on both the semantic and the textual level.
-    Complementing absolute measures of performance, we test our scores on three different
-    tasks and show the practical usability of the measures.
+  openreview_id: UDsD9gxyJl
+  pdf_file: 9664408186e93f77ad9fbc0764cadf1e12229034.pdf
+  title: Word Substitution with Masked Language Models as Data Augmentation for Sentiment
+    Analysis
+- abstract: With the advent of weakly supervised ASR systems like Whisper, it is possible
+    to train ASR systems on non-verbatim transcriptions. This paper describes an effort
+    to create a large Norwegian dataset for weakly supervised ASR from parliamentary
+    recordings. Audio from Stortinget, the Norwegian parliament, is segmented and
+    transcribed with an existing ASR system. An algorithm retrieves transcripts of
+    these segments from Stortinget's official proceedings using the Levenshtein edit
+    distance between the ASR output and the proceedings text. In that way, a dataset
+    of more than 5000 hours of transcribed speech is produced with limited human effort.
+    Since parliamentary data is public domain, the dataset can be shared freely without
+    any restrictions.
   attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 2
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Stefan
-    last_name: Ultes
-  - first_name: Wolfgang
-    last_name: Maier
+  - emails: per.solberg@nb.no
+    first_name: Per Erik
+    google_scholar_id: https://scholar.google.com/citations?hl=no&user=tesxpDsAAAAJ
+    homepage: https://www.linkedin.com/in/pesolberg/
+    institution: National Library of Norway
+    last_name: Solberg
+    name: Per Erik Solberg
+    username: ~Per_Erik_Solberg1
+  - emails: pierre.beauguitte@nb.no
+    first_name: Pierre
+    institution: National Library of Norway
+    last_name: Beauguitte
+    name: Pierre Beauguitte
+    username: ~Pierre_Beauguitte1
+  - emails: per.kummervold@nb.no
+    first_name: per.kummervold@nb.no
+    institution: NA
+    last_name: per.kummervold@nb.no
+    name: per.kummervold@nb.no
+    username: per.kummervold@nb.no
+  - emails: freddy.wetjen@nb.no
+    first_name: freddy.wetjen@nb.no
+    institution: NA
+    last_name: freddy.wetjen@nb.no
+    name: freddy.wetjen@nb.no
+    username: freddy.wetjen@nb.no
+  decision: Accept (Oral)
   file: 9.pdf
   id: 9
-  archival: True
-  title: Similarity Scoring for Dialogue Behaviour Comparison
-- abstract: 'Acoustic/prosodic (a/p) entrainment has been associated with multiple
-    positive social aspects of human-human conversations. However, research on its
-    effects is still preliminary, first because how to model it is far from standardized,
-    and second because most of the reported findings rely on small corpora or on corpora
-    collected in experimental setups. The present article has a twofold purpose:  1)
-    it proposes a unifying statistical framework for modeling a/p entrainment, and
-    2) it tests on two large corpora of spontaneous telephone interactions whether
-    three metrics derived from this framework predict positive social aspects of the
-    conversations. The corpora differ in their spoken language, domain, and positive
-    social outcome attached. To our knowledge, this is the first article studying
-    relations between a/p entrainment and positive social outcomes in such large corpora
-    of spontaneous dialog. Our results suggest that our metrics effectively predict,
-    up to some extent, positive social aspects of conversations, which not only validates
-    the methodology, but also provides further insights into the elusive topic of
-    entrainment in human-human conversation.'
+  openreview_id: trHUcOqOPY
+  pdf_file: 2f0981531d4182a44a34563f10063c2ab609dae5.pdf
+  title: A Large Norwegian Dataset for Weak Supervision ASR
+- abstract: Conventional approaches to the construction of word vectors typically
+    require very large amounts of unstructured text and powerful computing hardware,
+    and the vectors themselves are also difficult if not impossible to inspect or
+    interpret on their own.  In this paper, we introduce a method for building word
+    vectors using the framework of vector symbolic architectures in order to encode
+    the semantic information in wordnets, such as the Open English WordNet or the
+    Open Multilingual Wordnet.  Such vectors perform surprisingly well on common word
+    similarity benchmarks, and yet they are transparent, interpretable, and the information
+    contained within them has a clear provenance.
   attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 3
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Ramiro
-    last_name: "G\xE1lvez"
-    middle_name: H.
-  - first_name: Lara
-    last_name: Gauder
-  - first_name: Jordi
-    last_name: Luque
-  - first_name: "Agust\xEDn"
-    last_name: Gravano
+  - emails: roussel@linguistics.rub.de
+    first_name: Adam
+    homepage: https://linguistics.rub.de/~roussel
+    institution: Ruhr-Universtät Bochum
+    last_name: Roussel
+    name: Adam Roussel
+    username: ~Adam_Roussel1
+  decision: Accept (Poster)
+  file: 10.pdf
+  id: 10
+  openreview_id: 6edbhhylCe
+  pdf_file: eaa152b5670dc06be300c25af972f8abd126cff8.pdf
+  title: Lexical Semantics with Vector Symbolic Architectures
+- abstract: 'We present ongoing work dealing with a Linked Open Data (LOD) compliant
+    representation of Sign Language (SL) data, with the goal of supporting the cross-lingual
+    linking of SL data, also to Spoken Language data. As the European EASIER research
+    project has already investigated the use of Open Multilingual Wordnet (OMW) datasets
+    for cross-linking German and Greek SL data, we propose a unified RDF-based representation
+    of OMW and SL data.  In this context, we experimented with the transformation
+    into RDF of a rich dataset, which links Danish Sign Language data and the wordnet
+    for Danish, DanNet. We extend this work to other Nordic languages, aiming at supporting
+    cross-lingual comparisons of Nordic Sign Languages. This unified formal representation
+    offers a semantic repository of information on SL data that could be accessed
+    for supporting the creation of datasets for training or evaluating NLP applications
+    that involve SLs.  '
+  attributes:
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
+  authors:
+  - dblp_id: https://dblp.org/pid/05/6145
+    emails: declerck@dfki.de
+    first_name: Thierry
+    google_scholar_id: https://scholar.google.de/citations?user=m3DK3WEAAAAJ&hl=en
+    last_name: Declerck
+    name: Thierry Declerck
+    orcid: https://orcid.org/0000-0002-9450-6648
+    semantic_scholar_id: https://www.semanticscholar.org/author/Thierry-Declerck/1743895
+    username: ~Thierry_Declerck1
+  - emails: saolsen@hum.ku.dk
+    first_name: Sussi
+    google_scholar_id: https://scholar.google.com/citations?view_op=list_works&hl=en&user=m7DDLtUAAAAJ
+    institution: University of Copenhagen
+    last_name: Olsen
+    name: Sussi Olsen
+    username: ~Sussi_Olsen1
+  decision: Accept (Poster)
   file: 11.pdf
   id: 11
-  archival: True
-  title: 'A unifying framework for modeling acoustic/prosodic entrainment: definition
-    and evaluation on two large corpora'
-- abstract: In this work, we study collaborative online conversations. Such conversations
-    are rich in content, constructive and motivated by a shared goal. Automatically
-    identifying such conversations requires modeling complex discourse behaviors,
-    which characterize the flow of information, sentiment and community structure
-    within discussions. To help capture these behaviors, we define a hybrid relational
-    model in which relevant discourse behaviors are formulated as discrete latent
-    variables and scored using neural networks. These variables provide the information
-    needed for predicting the overall collaborative characterization of the entire
-    conversational thread. We show that adding inductive bias in the form of latent
-    variables results in performance improvement, while providing a natural way to
-    explain the decision.
+  openreview_id: yOGadaHa_2Z
+  pdf_file: f3b2b364f1aba1a0e52b163707f7031ce991d348.pdf
+  title: Linked Open Data compliant Representation of the Interlinking of Nordic Wordnets
+    and Sign Language Data
+- abstract: 'This paper examines the use of manually part-of-speech tagged sign language
+    gloss data in the Text2Gloss and Gloss2Text translation tasks, as well as running
+    an LSTM-based sequence labelling model on the same glosses for automatic part-of-speech
+    tagging. We find that a combination of tag-enhanced glosses and pretraining the
+    neural model positively impacts performance in the translation tasks. The results
+    of the tagging task are limited, but provide a methodological framework for further
+    research into tagging sign language gloss data. '
   attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 3
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Ayush
-    last_name: Jain
-  - first_name: Maria
-    last_name: Pacheco
-  - first_name: Steven
-    last_name: Lancette
-  - first_name: Mahak
-    last_name: Goindani
-  - first_name: Dan
-    last_name: Goldwasser
+  - emails: euan.mcgill@upf.edu
+    first_name: Euan
+    homepage: https://euan-mcgill.github.io/
+    institution: Universitat Pompeu Fabra
+    last_name: McGill
+    name: Euan McGill
+    orcid: https://orcid.org/0000-0001-6470-8188
+    username: ~Euan_McGill1
+  - dblp_id: https://dblp.org/pid/162/1557
+    emails: luischir@fing.edu.uy
+    first_name: Luis
+    google_scholar_id: https://scholar.google.com/citations?user=C7c4uCsAAAAJ&hl=en
+    institution: Facultad de Ingeniería - Universidad de la República - Uruguay
+    last_name: Chiruzzo
+    name: Luis Chiruzzo
+    orcid: https://orcid.org/0000-0002-1697-4614
+    semantic_scholar_id: https://www.semanticscholar.org/author/Luis-Chiruzzo/2287191
+    username: ~Luis_Chiruzzo1
+  - emails: santiago.egea@upf.edu
+    first_name: santiago.egea@upf.edu
+    institution: NA
+    last_name: santiago.egea@upf.edu
+    name: santiago.egea@upf.edu
+    username: santiago.egea@upf.edu
+  - dblp_id: https://dblp.uni-trier.de/pers/hd/s/Saggion:Horacio
+    emails: horacio.saggion@upf.edu
+    first_name: Horacio
+    google_scholar_id: https://scholar.google.com/citations?user=WMrCFCIAAAAJ&hl=es
+    homepage: https://www.upf.edu/web/horacio-saggion
+    institution: Universitat Pompeu Fabra
+    last_name: Saggion
+    name: Horacio Saggion
+    username: ~Horacio_Saggion2
+  decision: Accept (Oral)
   file: 12.pdf
   id: 12
-  archival: True
-  title: Identifying Collaborative Conversations using Latent Discourse Behaviors
-- abstract: Reinforcement learning (RL) methods have been widely used for learning
-    dialog policies. Sample efficiency, i.e., the efficiency of learning from limited
-    dialog experience, is particularly important in RL-based dialog policy learning,
-    because interacting with people is costly and low-quality dialog policies produce
-    very poor user experience. In this paper, we develop LHUA (Learning with Hindsight,
-    User modeling, and Adaptation) that, for the first time, enables dialog agents
-    to adaptively learn with hindsight from both simulated and real users. Simulation
-    and hindsight provide the dialog agent with more experience and more (positive)
-    reinforcement respectively. Experimental results suggest that LHUA outperforms
-    competitive baselines from the literature, including its no-simulation, no-adaptation,
-    and no-hindsight counterparts.
+  openreview_id: tmKXYCn3uc
+  pdf_file: 97956f2caa43d5cdae4e918e344298d6cf5d0ef3.pdf
+  title: Part-of-Speech tagging Spanish Sign Language data and its applications in
+    Sign Language machine translation
+- abstract: 'Negation constitutes a challenging phenomenon for many natural language
+    processing tasks, such as sentiment analysis (SA). In this paper we investigate
+    the relationship between negation and sentiment in the context of Norwegian professional
+    reviews. The first part of this paper includes a corpus study which investigates
+    how negation is tied to sentiment in this domain, based on existing annotations.
+    In the second part, we introduce NoReC-NegSynt, a synthetically augmented test
+    set for negation and sentiment, to allow for a more detailed analysis of the role
+    of negation in current neural SA models. This diagnostic test set, containing
+    both clausal and non-clausal negation, allows for analyzing and comparing models''
+    abilities to treat several different types of negation. We also present a case-study,
+    applying several neural SA models to the diagnostic data. '
   attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Yan
-    last_name: Cao
-  - first_name: Keting
-    last_name: Lu
-  - first_name: Xiaoping
-    last_name: Chen
-  - first_name: Shiqi
-    last_name: Zhang
+  - emails: pettemae@ifi.uio.no
+    first_name: Petter
+    google_scholar_id: https://scholar.google.com/citations?user=1nrR6LEAAAAJ&hl=no
+    homepage: https://www.mn.uio.no/ifi/personer/vit/pettemae/
+    last_name: Mæhlum
+    name: Petter Mæhlum
+    username: ~Petter_Mæhlum1
+  - dblp_id: https://dblp.org/pid/04/8218
+    emails: erikve@ifi.uio.no
+    first_name: Erik
+    google_scholar_id: https://scholar.google.com/citations?user=lbQyqGoAAAAJ
+    homepage: http://www.velldal.net/erik/
+    institution: University of Oslo
+    last_name: Velldal
+    name: Erik Velldal
+    semantic_scholar_id: https://www.semanticscholar.org/author/Erik-Velldal/2027091
+    username: ~Erik_Velldal1
+  - dblp_id: https://dblp.org/pid/03/6797
+    emails: liljao@ifi.uio.no
+    first_name: Lilja
+    google_scholar_id: https://scholar.google.no/citations?user=bQl3dcUAAAAJ&hl=no
+    homepage: https://www.mn.uio.no/ifi/english/people/aca/liljao/
+    institution: Dept. of Informatics, University of Oslo
+    last_name: Øvrelid
+    name: Lilja Øvrelid
+    semantic_scholar_id: https://www.semanticscholar.org/author/Lilja-%C3%98vrelid/2732223
+    username: ~Lilja_Øvrelid1
+  decision: Accept (Oral)
+  file: 13.pdf
+  id: 13
+  openreview_id: abKh6HLUp50
+  pdf_file: 7fa03ee3c641eaee473663b1b1202afbd14f3125.pdf
+  title: A Diagnostic Dataset for Sentiment and Negation Modeling for Norwegian
+- abstract: The Open Multilingual Online Lexicon of Okinawan (OMOLO) project aims
+    to create an accessible, user-friendly digital lexicon for the endangered Okinawan
+    language using digital humanities tools and methodologies. The multilingual web
+    application, available in Japanese, English, Portuguese, and Spanish, will benefit
+    language learners, researchers, and the Okinawan community in Japan and diaspora
+    countries such as the U.S., Brazil, and Peru. The project also lays the foundation
+    for an Okinawan UD Treebank, which will support computational analysis and the
+    development of language technology tools such as parsers, machine translation
+    systems, and speech recognition software. The OMOLO project demonstrates the potential
+    of computational linguistics in preserving and revitalizing endangered languages
+    and can serve as a blueprint for similar initiatives.
+  attributes:
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
+  authors:
+  - emails: so-miyagawa@ninjal.ac.jp
+    first_name: So
+    homepage: https://somiyagawa.de/
+    last_name: Miyagawa
+    name: So Miyagawa
+    username: ~So_Miyagawa1
+  - emails: kanji_kato@nii.ac.jp
+    first_name: kanji_kato@nii.ac.jp
+    institution: NA
+    last_name: kanji_kato@nii.ac.jp
+    name: kanji_kato@nii.ac.jp
+    username: kanji_kato@nii.ac.jp
+  - emails: miho.zlazli@gmail.com
+    first_name: miho.zlazli@gmail.com
+    institution: NA
+    last_name: miho.zlazli@gmail.com
+    name: miho.zlazli@gmail.com
+    username: miho.zlazli@gmail.com
+  - emails: nanajuu@gmail.com
+    first_name: nanajuu@gmail.com
+    institution: NA
+    last_name: nanajuu@gmail.com
+    name: nanajuu@gmail.com
+    username: nanajuu@gmail.com
+  - emails: machida.seira07@gmail.com
+    first_name: machida.seira07@gmail.com
+    institution: NA
+    last_name: machida.seira07@gmail.com
+    name: machida.seira07@gmail.com
+    username: machida.seira07@gmail.com
+  decision: Accept (Poster)
   file: 16.pdf
   id: 16
-  archival: True
-  title: Adaptive Dialog Policy Learning with Hindsight and User Modeling
-- abstract: We study the problem of schema discovery for knowledge graphs. We propose
-    a solution where an agent engages in multi-turn dialog with an expert for this
-    purpose. Each mini-dialog focuses on a short natural language statement, and looks
-    to elicit the expert's desired schema-based interpretation of that statement,
-    taking into account possible augmentations to the schema. The overall schema evolves
-    by performing dialog over a collection of such statements. We take into account
-    the probability that the expert does not respond to a query, and model this probability
-    as a function of the complexity of the query. For such mini-dialogs with response
-    uncertainty, we propose a dialog strategy that looks to elicit the schema over
-    as short a dialog as possible. By combining the notion of uncertainty sampling
-    from active learning with generalized binary search, the strategy asks the query
-    with the highest expected reduction of entropy. We show that this significantly
-    reduces dialog complexity while engaging the expert in meaningful dialog.
+  openreview_id: IMhfRdX_zw
+  pdf_file: 4821a268c53c93962e1c4d423e7e3ac4ed8ba553.pdf
+  title: Building Okinawan Lexicon Resource for Language Reclamation/Revitalization
+    and Natural Language Processing Tasks such as Universal Dependencies Treebanking
+- abstract: 'Large language models (LLMs) have substantially improved natural language
+    processing (NLP) performance, but training these models from scratch is resource-intensive
+    and challenging for smaller languages.
+
+    With this paper, we want to initiate a discussion on the necessity of language-specific
+    pre-training of LLMs.
+
+    We propose how the "one model-many models" conceptual framework for task transfer
+    can be applied to language transfer and explore this approach by evaluating the
+    performance of non-Swedish monolingual and multilingual models'' performance on
+    tasks in Swedish.
+
+    Our findings demonstrate that LLMs exposed to limited Swedish during training
+    can be highly capable and transfer competencies from English off-the-shelf, including
+    emergent abilities such as mathematical reasoning, while at the same time showing
+    distinct culturally adapted behaviour.
+
+    Our results suggest that there are resourceful alternatives to language-specific
+    pre-training when creating useful LLMs for small languages.'
   attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Subhasis
-    last_name: Ghosh
-  - first_name: Arpita
-    last_name: Kundu
-  - first_name: Aniket
-    last_name: Pramanick
-  - first_name: Indrajit
-    last_name: Bhattacharya
+  - emails: oskar.holmstrom@liu.se
+    first_name: Oskar
+    homepage: https://liu.se/en/employee/oskho10
+    last_name: Holmström
+    name: Oskar Holmström
+    username: ~Oskar_Holmström1
+  - dblp_id: https://dblp.org/pid/280/0142
+    emails: jenny.kunz@liu.se
+    first_name: Jenny
+    google_scholar_id: https://scholar.google.com/citations?user=REGDuswAAAAJ&hl=sv
+    institution: Linköping University
+    last_name: Kunz
+    name: Jenny Kunz
+    semantic_scholar_id: https://www.semanticscholar.org/author/Jenny-Kunz/150150807
+    username: ~Jenny_Kunz1
+  - dblp_id: https://dblp.org/pid/85/5777
+    emails: marco.kuhlmann@liu.se
+    first_name: Marco
+    google_scholar_id: https://scholar.google.de/citations?user=F10PNQMAAAAJ
+    homepage: https://www.ida.liu.se/~marku61/
+    institution: Linköping University
+    last_name: Kuhlmann
+    name: Marco Kuhlmann
+    orcid: https://orcid.org/0000-0002-2492-9872
+    username: ~Marco_Kuhlmann1
+  decision: Accept (Poster)
   file: 17.pdf
   id: 17
-  archival: True
-  title: Discovering Knowledge Graph Schema from Short Natural Language Text via Dialog
-- abstract: We describe an attentive listening system for the autonomous android robot
-    ERICA.
+  openreview_id: DGgEZQe9Bh
+  pdf_file: 7f29effe4fcbf086099ea5dbbf60f628492baf5e.pdf
+  title: 'Bridging the Resource Gap: Exploring the Efficacy of English and Multilingual
+    LLMs for Swedish'
+- abstract: Obtaining information about loan words and irregular morphological patterns
+    can be difficult for low-resource languages. Using Sakha as an example,  we show
+    that it is possible to exploit known phonemic regularities such as vowel harmony
+    and consonant distributions to identify loan words and irregular patterns, which
+    can be helpful in rule-based downstream tasks such as parsing and POS-tagging.
+    We evaluate phonemically inspired methods for loanword detection, combined with
+    bi-gram vowel transition probabilities to inspect irregularities in the morphology
+    of loanwords. We show that both these techniques can be useful for the detection
+    of such patterns. Finally, we inspect the plural suffix -ЛАр [-LAr] to observe
+    some of the variation in morphology between native and foreign words.
   attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 1
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Koji
-    last_name: Inoue
-  - first_name: Divesh
-    last_name: Lala
-  - first_name: Kenta
-    last_name: Yamamoto
-  - first_name: Shizuka
-    last_name: Nakamura
-  - first_name: Katsuya
-    last_name: Takanashi
-  - first_name: Tatsuya
-    last_name: Kawahara
+  - emails: pettemae@ifi.uio.no
+    first_name: Petter
+    google_scholar_id: https://scholar.google.com/citations?user=1nrR6LEAAAAJ&hl=no
+    homepage: https://www.mn.uio.no/ifi/personer/vit/pettemae/
+    last_name: Mæhlum
+    name: Petter Mæhlum
+    username: ~Petter_Mæhlum1
+  - dblp_id: https://dblp.org/pid/251/3997
+    emails: sardana.ivanova@helsinki.fi
+    first_name: Sardana
+    google_scholar_id: https://scholar.google.com/citations?user=UzgqCbYAAAAJ&hl=ru
+    homepage: https://www.cs.helsinki.fi/u/sivanova/
+    institution: University of Helsinki
+    last_name: Ivanova
+    name: Sardana Ivanova
+    semantic_scholar_id: https://www.semanticscholar.org/author/153415572
+    username: ~Sardana_Ivanova1
+  decision: Accept (Poster)
   file: 18.pdf
   id: 18
-  archival: True
-  title: 'An Attentive Listening System with Android ERICA: Comparison of Autonomous
-    and WOZ Interactions'
-- abstract: Neural encoder-decoder models have shown promising performance for human-computer
-    dialogue systems over the past few years. However, due to the maximum-likelihood
-    objective for the decoder, the generated responses are often universal and safe
-    to the point that they lack meaningful information and are no longer relevant
-    to the post. To address this, in this paper, we propose semantic guidance using
-    reinforcement learning to ensure that the generated responses indeed include the
-    given or predicted semantics and that these semantics do not appear repeatedly
-    in the response. Synsets, which comprise sets of manually defined synonyms, are
-    used as the form of assigned semantics. For a
+  openreview_id: MoZi49Evle
+  pdf_file: d027fee1aaedc13b5b83c1eed88b9ad07191debb.pdf
+  title: Phonotactics as an Aid in Low Resource Loan Word Detection and Morphological
+    Analysis in Sakha
+- abstract: Internal representations in transformer models can encode useful linguistic
+    knowledge about syntax. Such knowledge could help optimise the data annotation
+    process. However, identifying and extracting such representations from big language
+    models is challenging. In this paper we evaluate two multilingual transformers
+    for the presence of knowledge about the syntactic complexity of sentences and
+    examine different vector norms. We provide a fine-grained evaluation of different
+    norms in different layers and for different languages. Our results suggest that
+    no single part in the models would be the primary source for the knowledge of
+    syntactic complexity. But some norms show a higher degree of sensitivity to syntactic
+    complexity, depending on the language and model used.
   attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Cheng-Hsun
-    last_name: Hsueh
-  - first_name: Wei-Yun
-    last_name: Ma
-  file: 22.pdf
-  id: 22
-  archival: True
-  title: Semantic Guidance of Dialogue Generation with Reinforcement Learning
-- abstract: The present study aims to examine the prevalent notion that people entrain
-    to the vocabulary of a dialogue system. Although previous research shows that
-    people will replace their choice of words with simple substitutes, studies using
-    more challenging substitutions are sparse. In this paper, we investigate whether
-    people adapt their speech to the vocabulary of a dialogue system when the system's
-    suggested words are not direct synonyms. 32 participants played a geography-themed
-    game with a remote-controlled agent and were primed by referencing strategies
-    (rather than individual terms) introduced in follow-up questions. Our results
-    suggest that context-appropriate substitutes support convergence and that the
-    convergence has a lasting effect within a dialogue session if the system's wording
-    is more consistent with the norms of the domain than the original wording of the
-    speaker.
+  - dblp_id: https://dblp.org/pid/211/7416
+    emails: adam.ek@gu.se
+    first_name: Adam
+    google_scholar_id: https://scholar.google.se/citations?user=h4igLNUAAAAJ&hl=sv
+    institution: Department of Philosophy, Linguistics and Theory of Science
+    last_name: Ek
+    name: Adam Ek
+    semantic_scholar_id: https://www.semanticscholar.org/author/Adam-Ek/20493598
+    username: ~Adam_Ek1
+  - emails: nikolai.ilinykh@gu.se
+    first_name: Nikolai
+    google_scholar_id: https://scholar.google.com/citations?user=xvVbd4EAAAAJ&hl=en
+    institution: Gothenburg University
+    last_name: Ilinykh
+    name: Nikolai Ilinykh
+    semantic_scholar_id: https://www.semanticscholar.org/author/51933789
+    username: ~Nikolai_Ilinykh1
+  decision: Accept (Poster)
+  file: 19.pdf
+  id: 19
+  openreview_id: VMZOPNifXP
+  pdf_file: 5317b60bd8c4597eb3017d589357472ada273f54.pdf
+  title: Vector Norms as an Approximation of Syntactic Complexity
+- abstract: Natural language processing techniques can be valuable for improving and
+    facilitating historical research. This is also true for the analysis of petitions,
+    a source which has been relatively little used in historical research. However,
+    limited data resources pose challenges for mainstream natural language processing
+    approaches based on machine learning. In this paper, we explore methods for automatically
+    segmenting petitions according to their rhetorical structure. We find that the
+    use of rules, word embeddings, and especially keywords can give promising results
+    for this task.
   attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Amanda
-    last_name: Bergqvist
-  - first_name: Ramesh
-    last_name: Manuvinakurike
-  - first_name: Deepthi
-    last_name: Karkada
-  - first_name: Maike
-    last_name: Paetzel
-  file: 24.pdf
-  id: 24
-  archival: True
-  title: Nontrivial Lexical Convergence in a Geography-Themed Game
-- abstract: This paper presents MDP policy learning for agents to learn strategic
-    behavior--how to play board games--during multimodal dialogues. Policies are trained
-    offline in simulation, with dialogues carried out in a formal language. The agent
-    has a temporary belief state for the dialogue, and a persistent knowledge store
-    represented as an extensive-form game tree. How well the agent learns a new game
-    from a dialogue with a simulated partner is evaluated by how well it plays the
-    game, given its dialogue-final knowledge state. During policy training, we control
-    for the simulated dialogue partner's level of informativeness in responding to
-    questions. The agent learns best when its trained policy matches the current dialogue
-    partner's informativeness. We also present a novel data collection for training
-    natural language modules. Human subjects who engaged in dialogues with a baseline
-    system rated the system's language skills as above average. Further, results confirm
-    that human dialogue partners also vary in their informativeness.
+  - emails: ellinor.lindqvist@lingfil.uu.se
+    first_name: Ellinor
+    homepage: https://www.katalog.uu.se/empinfo/?id=N19-1972
+    institution: Uppsala University
+    last_name: Lindqvist
+    name: Ellinor Lindqvist
+    username: ~Ellinor_Lindqvist1
+  - emails: eva.pettersson@lingfil.uu.se
+    first_name: Eva
+    homepage: https://www.katalog.uu.se/empinfo/?id=N3-992
+    institution: Uppsala University
+    last_name: Pettersson
+    name: Eva Pettersson
+    username: ~Eva_Pettersson1
+  - dblp_id: https://dblp.org/pid/n/JoakimNivre
+    emails: joakim.nivre@ri.se
+    first_name: Joakim
+    google_scholar_id: https://scholar.google.co.uk/citations?user=lLBHtFUAAAAJ&hl=sv
+    homepage: https://www.ri.se/en/person/joakim-nivre
+    institution: Uppsala University
+    last_name: Nivre
+    name: Joakim Nivre
+    orcid: https://orcid.org/0000-0002-7873-3971
+    semantic_scholar_id: https://www.semanticscholar.org/author/Joakim-Nivre/1720988
+    username: ~Joakim_Nivre1
+  decision: Accept (Oral)
+  file: 20.pdf
+  id: 20
+  openreview_id: Lc8K7ckbA4
+  pdf_file: 99ae9e0c7dab63e8d5e4aa11976e37c1ad9c7827.pdf
+  title: Low-Resource Techniques for Analysing the Rhetorical Structure of Swedish
+    Historical Petitions
+- abstract: A crucial social characteristic that facilitates human-robot cooperation
+    is gaze following. We propose a new approach to estimate gaze using a neural network
+    architecture, while considering the dynamic patterns of real world gaze behaviour
+    in natural interaction. The main goal is to provide a basis for robot or avatar
+    to communicate with humans using multimodal natural dialogue. We generated 2.4M
+    gaze predictions of various types of gaze in a more natural setting (GHI-Gaze).
+    The predicted and categorised gaze data can be used to automate contextualized
+    robotic gaze-tracking behaviour in interaction. We evaluate the performance on
+    a manually-annotated data set and a publicly available gaze-follow dataset. Compared
+    to previously reported methods our model performs better with the closest angular
+    error to that of a human annotator.
   attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 2
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Maryam
-    last_name: Zare
-  - first_name: Ali
-    last_name: Ayub
-  - first_name: Aishan
-    last_name: Liu
-  - first_name: Sweekar
-    last_name: Sudhakara
-  - first_name: Alan
-    last_name: Wagner
-  - first_name: Rebecca
-    last_name: Passonneau
-  file: 25.pdf
-  id: 25
-  archival: True
-  title: Dialogue Policies for Learning Board Games through Multimodal Communication
-- abstract: 'We will demonstrate a deployed conversational AI system that acts as
-    a host of a smart-building on a university campus. The system combines open-domain
-    social conversation with task-based conversation regarding navigation in the building,
-    live resource updates (e.g. available computers) and events in the building. We
-    are able to demonstrate the system on several platforms: Google Home devices,
-    Android phones, and a Furhat robot.'
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
-  authors:
-  - first_name: Weronika
-    last_name: "Siei\u0144ska"
-  - first_name: Christian
-    last_name: Dondrup
-  - first_name: Nancie
-    last_name: Gunson
-  - first_name: Oliver
-    last_name: Lemon
-  file: 28.pdf
-  id: 28
-  archival: True
-  title: Conversational Agents for Intelligent Buildings
-- abstract: 'Dialog systems capable of filling slots with numerical values have wide
-    applicability to many task-oriented applications. '
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: Hongjie
-    last_name: Shi
-  file: 38.pdf
-  id: 38
-  archival: True
-  title: A Sequence-to-sequence Approach for Numerical Slot-filling Dialog Systems
-- abstract: Conversations over the telephone require timely turn-taking cues that
-    signal the participants when to speak and when to listen. When a two-way transmission
-    delay is introduced into such conversations, the immediate feedback is delayed,
-    and the interactivity of the conversation is impaired. With delayed speech on
-    each side of the transmission, different conversation realities emerge on both
-    ends, which alters the way the participants interact with each other. Simulating
-    conversations can give insights on turn-taking and spoken interactions between
-    humans but can also used for analyzing and even predicting human behavior in conversations.
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: Thilo
-    last_name: Michael
-  - first_name: Sebastian
-    last_name: "M\xF6ller"
-  file: 41.pdf
-  id: 41
-  archival: True
-  title: Simulating Turn-Taking in Conversations with Delayed Transmission
-- abstract: "For the acquisition of knowledge through dialogues, it is crucial for\
-    \ systems to ask questions that do not diminish the user\u2019s willingness to\
-    \ talk, i.e., that do not degrade the user\u2019s impression. This paper reports\
-    \ the results of our analysis on how user impression changes depending on the\
-    \ types of questions to acquire lexical knowledge, that is, explicit and implicit\
-    \ questions, and the correctness of the content of the questions. We also analyzed\
-    \ how sequences of the same type of questions affect user impression. User impression\
-    \ scores were collected from 104 participants recruited via crowdsourcing and\
-    \ then regression analysis was conducted. The results demonstrate that implicit\
-    \ questions give a good impression when their content is correct, but a bad impression\
-    \ otherwise. We also found that consecutive explicit questions are more annoying\
-    \ than implicit ones when the content of the questions is correct. Our findings\
-    \ reveal helpful insights for creating a strategy to avoid user impression deterioration\
-    \ during knowledge acquisition."
-  attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Kazunori
-    last_name: Komatani
-  - first_name: Mikio
-    last_name: Nakano
-  file: 42.pdf
-  id: 42
-  archival: True
-  title: User Impressions of Questions to Acquire Lexical Knowledge
-- abstract: Cognitive models of conversation and research on user-adaptation in dialogue
-    systems involves a better understanding of speakers convergence in conversation.
-    Convergence effects have been established on controlled data sets, for various
-    acoustic and linguistic variables. Tracking interpersonal dynamics on generic
-    corpora has provided positive but more contrasted outcomes. We propose here to
-    enrich large conversational corpora with dialogue act (DA) information. We use
-    DA-labels as filters in order to create data sub sets featuring homogeneous conversational
-    activity. Those data sets allow a more precise comparison between speakers' speech
-    variables. Our experiences consist of comparing convergence on low level variables
-    (Energy, Pitch, Speech Rate) measured on raw data sets, with human and automatically
-    DA-labelled data sets. We found that such filtering does help in observing convergence
-    suggesting that studies on interpersonal dynamics should consider such high level
-    dialogue activity types and their related NLP topics as important ingredients
-    of their toolboxes.
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
-  authors:
-  - first_name: Simone
-    last_name: Fuscone
-  - first_name: Benoit
-    last_name: Favre
-  - first_name: Laurent
-    last_name: "Pr\xE9vot"
-  file: 43.pdf
-  id: 43
-  title: Filtering conversations through dialogue acts labels for improving corpus-based
-    convergence studies
-- abstract: In this paper we present the newest version of retico - a python-based
-    incremental dialogue framework to create state-of-the-art spoken dialogue systems
-    and simulations. Retico provides a range of incremental modules that are based
-    on services like Google ASR, Google TTS and Rasa NLU. Incremental networks can
-    be created either in code or with a graphical user interface.
-  attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 2
-  authors:
-  - first_name: Thilo
-    last_name: Michael
-  file: 44.pdf
-  id: 44
-  title: 'Retico: An incremental framework for spoken dialogue systems'
-- abstract: 'Turn-entry timing is an important requirement for conversation, and one
-    that spoken dialogue systems largely fail at. In this paper, we introduce a computational
-    framework based on work from Psycholinguistics, which is aimed at achieving proper
-    turn-taking timing for situated agents. The approach involves incremental processing
-    and lexical prediction of the turn in progress, which allows a situated dialogue
-    system to start its turn and initiate actions earlier than would otherwise be
-    possible. We evaluate the framework by integrating it within a cognitive robotic
-    architecture and testing performance on a corpus of task-oriented human-robot
-    directives. We demonstrate that: 1) the system is superior to a non-incremental
-    system in terms of faster responses, reduced gap between turns, and the ability
-    to perform actions early, 2) the system can time its turn to come in immediately
-    at a transition point or earlier to produce several types of overlap, and 3) the
-    system is robust to various forms of disfluency in the input. Overall, this domain-independent
-    framework can be integrated into various dialogue systems to improve responsiveness,
-    and is a step toward more natural, human-like turn-taking behavior.'
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
-  authors:
-  - first_name: Felix
-    last_name: Gervits
-  - first_name: Ravenna
-    last_name: Thielstrom
-  - first_name: Antonio
-    last_name: Roque
-  - first_name: Matthias
-    last_name: Scheutz
-  file: 49.pdf
-  id: 49
-  title: 'It''s About Time: Turn-Entry Timing For Situated Human-Robot Dialogue'
-- abstract: 'In this work, we investigate the human perception of coherence in open-domain
-    dialogues. In particular, we address the problem of annotating and modeling the
-    coherence of next-turn candidates while considering the entire history of the
-    dialogue.  '
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: Alessandra
-    last_name: Cervone
-  - first_name: Giuseppe
-    last_name: Riccardi
-  file: 58.pdf
-  id: 58
-  title: Is this Dialogue Coherent? Learning from Dialogue Acts and Entities
-- abstract: 'Our goal is to develop and deploy a virtual assistant health coach that
-    can help patients set realistic physical activity goals and live a more active
-    lifestyle. Since there is no publicly shared dataset of health coaching dialogues,
-    the first phase of our research focused on data collection. We hired a certified
-    health coach and 28 patients to collect the first round of human-human health
-    coaching interaction which took place via text messages. This resulted in 2853
-    messages. The data collection phase was followed by conversation analysis to gain
-    insight into the way information exchange takes place between a health coach and
-    a patient. This was formalized using two annotation schemas: one that focuses
-    on the goals the patient is setting and another that models the higher-level structure
-    of the interactions. In this paper, we discuss these schemas and briefly talk
-    about their application for automatically extracting activity goals and annotating
-    the second round of data, collected with different health coaches and patients.
-    Given the resource-intensive nature of data annotation, successfully annotating
-    a new dataset automatically is key to answer the need for high quality, large
-    datasets.'
-  attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Itika
-    last_name: Gupta
-  - first_name: Barbara
-    last_name: Eugenio
-    middle_name: Di
-  - first_name: Brian
-    last_name: Ziebart
-  - first_name: Aiswarya
-    last_name: Baiju
-  - first_name: Bing
-    last_name: Liu
-  - first_name: Ben
-    last_name: Gerber
-  - first_name: Lisa
-    last_name: Sharp
-  - first_name: Nadia
-    last_name: Nabulsi
-  - first_name: Mary
-    last_name: Smart
-  file: 60.pdf
-  id: 60
-  title: 'Human-Human Health Coaching via Text Messages: Corpus, Annotation, and Analysis'
-- abstract: Spoken interaction with a physical robot requires a dialogue system that
-    is modular, multimodal, distributive, incremental and temporally aligned. In this
-    demo paper, we make significant contributions towards fulfilling these requirements
-    by expanding upon the ReTiCo incremental framework. We outline the incremental
-    and multimodal modules and how their computation can be distributed. We demonstrate
-    the power and flexibility of our robot-ready spoken dialogue system to be integrated
-    with almost any robot.
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: Casey
-    last_name: Kennington
-  - first_name: Daniele
-    last_name: Moro
-  - first_name: Lucas
-    last_name: Marchand
-  - first_name: Jake
-    last_name: Carns
-  - first_name: David
-    last_name: McNeill
-  file: 61.pdf
-  id: 61
-  title: 'rrSDS: Towards a Robot-ready Spoken Dialogue System'
-- abstract: ' physical blocks world, despite its relative simplicity, requires (in
-    fully interactive form) a rich set of functional capabilities, ranging from vision
-    to natural language understanding. In this work we tackle spatial question answering
-    in a holistic way, using a vision system, speech input and output mediated by
-    an animated avatar, a dialogue system that robustly interprets spatial queries,
-    and a constraint solver that derives answers based on 3-D spatial modeling. The
-    contributions of this work include a semantic parser that maps spatial questions
-    into logical forms consistent with a general approach to meaning representation,
-    a dialogue manager based on a schema representation, and a constraint solver for
-    spatial questions that provides answers in agreement with human perception. These
-    and other components are integrated into a multi-modal human-computer interaction
-    pipeline.'
-  attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: Georgiy
-    last_name: Platonov
-  - first_name: Lenhart
-    last_name: Schubert
-  - first_name: Benjamin
-    last_name: Kane
-  - first_name: Aaron
-    last_name: Gindi
-  file: 62.pdf
-  id: 62
-  title: A Spoken Dialogue System for Spatial Question Answering in a Physical Blocks
-    World
-- abstract: 'In working towards accomplishing a human-level acquisition and understanding
-    of language, a robot must meet two requirements: the ability to learn words from
-    interactions with its physical environment, and the ability to learn language
-    from people in settings for language use, such as spoken dialogue. In a live interactive
-    study, we test the hypothesis that emotional displays are a viable solution to
-    the cold-start problem of how to communicate without relying on language the robot
-    does not--indeed, cannot--yet know. We explain our modular system that can autonomously
-    learn word groundings through interaction and show through a user study with 21
-    participants that emotional displays improve the quantity and quality of the inputs
-    provided to the robot.'
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 1
-  authors:
-  - first_name: David
-    last_name: McNeill
-  - first_name: Casey
-    last_name: Kennington
-  file: 63.pdf
-  id: 63
-  title: Learning Word Groundings from Humans Facilitated by Robot Emotional Displays
-- abstract: This paper describes the design and functionality of ConvoKit, an open-source
-    toolkit for analyzing conversations and the social interactions embedded within.
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Jonathan
-    last_name: Chang
-    middle_name: P.
-  - first_name: Caleb
-    last_name: Chiam
-  - first_name: Liye
-    last_name: Fu
-  - first_name: Andrew
-    last_name: Wang
-  - first_name: Justine
-    last_name: Zhang
-  - first_name: Cristian
-    last_name: Danescu-Niculescu-Mizil
-  file: 71.pdf
-  id: 71
-  title: 'ConvoKit: A Toolkit for the Analysis of Conversations'
-- abstract: We present a comprehensive platform to run human-computer experiments
-  attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: Arne
-    last_name: "K\xF6hn"
-  - first_name: Julia
-    last_name: Wichlacz
-  - first_name: Christine
-    last_name: "Sch\xE4fer"
-  - first_name: "\xC1lvaro"
-    last_name: Torralba
-  - first_name: Joerg
-    last_name: Hoffmann
-  - first_name: Alexander
-    last_name: Koller
-  file: 72.pdf
-  id: 72
-  title: 'MC-Saar-Instruct: a Platform for Minecraft Instruction Giving Agents'
-- abstract: "We introduce a counseling dialogue system that seeks to assist counselors\
-    \ while they are learning and refining their counseling skills. The system generates\
-    \ counselors\u2019reflections  \u2013  i.e.,  responses that reflect back on what\
-    \ the client has said given the dialogue history. Our method builds upon the new\
-    \ generative pretrained transformer architecture and enhances it with context\
-    \ augmentation techniques inspired by traditional strategies used during counselor\
-    \ training.  Through a set of comparative experiments,  we show that the system\
-    \ that incorporates these strategies performs better in the reflection generation\
-    \ task than a system that is just fine-tuned with counseling conversations. To\
-    \ confirm our findings, we present a human evaluation study that shows that our\
-    \ system generates naturally-looking reflections that are also stylistically and\
-    \ grammatically correct."
-  attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Siqi
-    last_name: Shen
-  - first_name: Charles
-    last_name: Welch
-  - first_name: Rada
-    last_name: Mihalcea
-  - first_name: "Ver\xF3nica"
-    last_name: "P\xE9rez-Rosas"
-  file: 76.pdf
-  id: 76
-  title: Counseling-Style Reflection Generation Using Generative Pretrained Transformers
-    with Augmented Context
-- abstract: Human tackle reading comprehension not only based on the given context
-    itself but often rely on the commonsense beyond. To empower the machine with commonsense
-    reasoning, in this paper, we propose a Commonsense Evidence Generation and Injection
-    framework in reading comprehension, named CEGI. The framework injects two kinds
-    of auxiliary commonsense evidence into comprehensive reading to equip the machine
-    with the ability of rational thinking. Specifically, we build two evidence
-  attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Ye
-    last_name: Liu
-  - first_name: Tao
-    last_name: Yang
-  - first_name: Zeyu
-    last_name: You
-  - first_name: Wei
-    last_name: Fan
-  - first_name: Philip
-    last_name: Yu
-    middle_name: S.
-  file: 78.pdf
-  id: 78
-  title: Commonsense Evidence Generation and Injection in Reading Comprehension
-- abstract: ' conversational AI-based dialogue management has increasingly become
-    a trending topic, the need for a standardized and reliable evaluation procedure
-    grows even more pressing. The current state of affairs suggests various evaluation
-    protocols to assess chat-oriented dialogue management systems, rendering it difficult
-    to conduct fair comparative studies across different approaches and gain an insightful
-    understanding of their values. To foster this research, a more robust evaluation
-    protocol must be set in place. This paper presents a comprehensive synthesis of
-    both automated and human evaluation methods on dialogue systems, identifying their
-    shortcomings while accumulating evidence towards the most effective evaluation
-    dimensions. A total of 20 papers from the last two years are surveyed to analyze
-    three types of evaluation protocols: automated, static, and interactive. Finally,
-    the evaluation dimensions used in these papers are compared against our expert
-    evaluation on the system-user dialogue data collected from the Alexa Prize 2020.'
-  attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Sarah
-    last_name: Finch
-    middle_name: E.
-  - first_name: Jinho
-    last_name: Choi
-    middle_name: D.
-  file: 79.pdf
-  id: 79
-  title: 'Towards Unified Dialogue System Evaluation: A Comprehensive Analysis of
-    Current Evaluation Protocols'
-- abstract: Reinforcement learning and probabilistic reasoning algorithms aim at learning
-    from interaction experiences and reasoning with probabilistic contextual knowledge
-    respectively. In this research, we develop algorithms for robot task completions,
-    while looking into the complementary strengths of reinforcement learning and probabilistic
-    reasoning techniques. The robots learn from trial-and-error experiences to augment
-    their declarative knowledge base, and the augmented knowledge can be used for
-    speeding up the learning process in potentially different tasks. We have implemented
-    and evaluated the developed algorithms using mobile robots conducting dialog and
-    navigation tasks. From the results, we see that our robot's performance can be
-    improved by both reasoning with human knowledge and learning from task-completion
-    experience. More interestingly, the robot was able to learn from navigation tasks
-    to improve its dialog strategies.
-  attributes:
-    paper_type: long
-    presentation_type: poster
-    submitted_area: Area 2
-  authors:
-  - first_name: Keting
-    last_name: Lu
-  - first_name: Shiqi
-    last_name: Zhang
-  - first_name: Peter
-    last_name: Stone
-  - first_name: Xiaoping
-    last_name: Chen
-  file: 81.pdf
-  id: 81
-  title: Learning and Reasoning for Robot Dialog and Navigation Tasks
-- abstract: 'Most prior work on task-oriented dialogue systems are restricted to a
-    limited coverage of domain APIs, while users oftentimes have domain related requests
-    that are not covered by the APIs. In this paper, we propose to expand coverage
-    of task-oriented dialogue systems by incorporating external unstructured knowledge
-    sources. We define three sub-tasks: knowledge-seeking turn detection, knowledge
-    selection, and knowledge-grounded response generation, which can be modeled individually
-    or jointly. We introduce an augmented version of MultiWOZ 2.1, which includes
-    new out-of-API-coverage turns and responses grounded on external knowledge sources.
-    We present baselines for each sub-task using both conventional and neural approaches.
-    Our experimental results demonstrate the need for further research in this direction
-    to enable more informative conversational systems.'
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 2
-  authors:
-  - first_name: Seokhwan
-    last_name: Kim
-  - first_name: Mihail
-    last_name: Eric
-  - first_name: Karthik
-    last_name: Gopalakrishnan
-  - first_name: Behnam
-    last_name: Hedayatnia
-  - first_name: Yang
-    last_name: Liu
-  - first_name: Dilek
-    last_name: Hakkani-Tur
-  file: 83.pdf
-  id: 83
-  title: 'Beyond Domain APIs: Task-oriented Conversational Modeling with Unstructured
-    Knowledge Access'
-- abstract: We present a framework for improving task-oriented dialog systems through
-    online interactive teaching with human trainers. A dialog policy trained with
-    imitation learning on a limited corpus may not generalize well to novel dialog
-    flows often uncovered in live interactions. This issue is magnified in multi-action
-    dialog policies which have a more expressive action space. In our approach, a
-    pre-trained dialog policy model interacts with human trainers, and at each turn
-    the trainers choose the best output among N-best multi-action outputs. We present
-    a novel multi-domain, multi-action dialog policy architecture trained on MultiWOZ,
-    and show that small amounts of online supervision can lead to significant improvement
-    in model performance. We also present transfer learning results which show that
-    interactive learning in one domain improves policy model performance in related
+  - emails: vidya.somashekarappa@gu.se
+    first_name: Vidya
+    google_scholar_id: https://scholar.google.se/citations?user=nlYJMDAAAAAJ&hl=en
+    homepage: https://www.gu.se/om-universitetet/hitta-person/vidyasomashekarappa
+    last_name: Somashekarappa
+    name: Vidya Somashekarappa
+    username: ~Vidya_Somashekarappa1
+  - emails: christine.howes@gu.se
+    first_name: Christine
+    homepage: https://www.christinehowes.com
+    institution: University of Gothenburg
+    last_name: Howes
+    name: Christine Howes
+    username: ~Christine_Howes1
+  - dblp_id: https://dblp.org/pid/69/4099
+    emails: asad.sayeed@gu.se
+    first_name: Asad
+    google_scholar_id: https://scholar.google.se/citations?user=mcQ2aj8AAAAJ&hl=en
+    homepage: https://clasp.gu.se/about/people/asad-sayeed
+    institution: University of Gothenburg
+    last_name: Sayeed
+    middle_name: B.
+    name: Asad B. Sayeed
+    username: ~Asad_B._Sayeed1
+  decision: Accept (Poster)
+  file: 21.pdf
+  id: 21
+  openreview_id: 0ZQL9KCWqgF
+  pdf_file: 88166193d1a6a672536dbac3f339cc84247bf82f.pdf
+  title: Prediction and Generation of Gaze in Conversation using Deep learning
+- abstract: We evaluate the role of expert-based do- main knowledge and resources
+    in relation to the recent developments in natural language processing that focus
+    on training large models by referring to our work on under-resourced scenarios
+    which we believe also informs work on training “well- resourced languages and
     domains.
   attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
+    paper_type: N/A
+    presentation_type: N/A
+    submitted_area: null
   authors:
-  - first_name: Megha
-    last_name: Jhunjhunwala
-  - first_name: Caleb
-    last_name: Bryant
-  - first_name: Pararth
-    last_name: Shah
-  file: 87.pdf
-  id: 87
-  title: Multi-Action Dialog Policy Learning with Interactive Human Teaching
-- abstract: We investigate differences in user communication with live chat agents
-    versus a commercial Intelligent Virtual Agent (IVA). This case study compares
-    the two types of interactions in the same domain for the same company filling
-    the same purposes. We compared 16,794 human-to-human conversations and 27,674
-    conversations with the IVA. Of those IVA conversations, 8,324 escalated to human
-    live chat agents. We then investigated how human-to-human communication strategies
-    change when users first communicate with an IVA in the same conversation thread.
-    We measured quantity, quality, and diversity of language, and analyzed complexity
-    using numerous features.
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 3
-  authors:
-  - first_name: Timothy
-    last_name: Hewitt
-  - first_name: Ian
-    last_name: Beaver
-  file: 89.pdf
-  id: 89
-  title: A Case Study of User Communication Styles with Customer Service Agents versus
-    Intelligent Virtual Agents
-- abstract: We are studying a cooperation style where multiple speakers can provide
-    both advanced dialogue services and operator education. We focus on a style in
-    which two operators interact with a user by pretending to be a single operator.
-    For two operators to effectively act as one, each must adjust his/her conversational
-    content and timing to the other. In the process, we expect each operator to experience
-    the conversational content of his/her partner as if it were his/her own, creating
-    efficient and effective learning of the other's skill. We analyzed this educational
-    effect and examined whether dialogue services can be successfully provided by
-    collecting travel guidance dialogue data from operators who give travel information
-    to users. In this paper, we report our preliminary results on dialogue content
-    and user satisfaction of operators and users.
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 2
-  authors:
-  - first_name: Tsunehiro
-    last_name: Arimoto
-  - first_name: Ryuichiro
-    last_name: Higashinaka
-  - first_name: Kou
-    last_name: Tanaka
-  - first_name: Takahito
-    last_name: Kawanishi
-  - first_name: Hiroaki
-    last_name: Sugiyama
-  - first_name: Hiroshi
-    last_name: Sawada
-  - first_name: Hiroshi
-    last_name: Ishiguro
-  file: 92.pdf
-  id: 92
-  title: Collection and Analysis of Dialogues Provided by Two Speakers Acting as One
-- abstract: We analyze a corpus of referential communication through the lens of quantitative
-    models of speaker reasoning.  Different models place different emphases on linguistic
-    reasoning and collaborative reasoning.  This leads models to make different assessments
-    of the risks and rewards of using specific utterances in specific contexts.  By
-    fitting a latent variable model to the corpus, we can exhibit utterances that
-    give systematic evidence of the diverse kinds of reasoning speakers employ, and
-    build integrated models that recognize not only speaker reference but also speaker
-    reasoning.
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 3
-  authors:
-  - first_name: Brian
-    last_name: McMahan
-  - first_name: Matthew
-    last_name: Stone
-  file: 94.pdf
-  id: 94
-  title: Analyzing Speaker Strategy in Referential Communication
-- abstract: Contextualized language modeling using deep Transformer networks has been
-    applied to a variety of natural language processing tasks with remarkable success.
-    However, we find that these models are not a panacea for a question-answering
-    dialogue agent corpus task, which has hundreds of classes in a long-tailed frequency
-    distribution, with only thousands of data points. Instead, we find substantial
-    improvements in recall and accuracy on rare classes from a simple one-layer RNN
-    with multi-headed self-attention and static word embeddings as inputs. While much
-    research has used attention weights to illustrate what input is important for
-    a task, the complexities of our dialogue corpus offer a unique opportunity to
-    examine how the model represents what it attends to, and we offer a detailed analysis
-    of how that contributes to improved performance on rare classes. A particularly
-    interesting phenomenon we observe is that the model picks up implicit meanings
-    by splitting different aspects of the semantics of a single word across multiple
-    attention heads.
-  attributes:
-    paper_type: long
-    presentation_type: oral
-    submitted_area: Area 3
-  authors:
-  - first_name: Adam
-    last_name: Stiff
-  - first_name: Qi
-    last_name: Song
-  - first_name: Eric
-    last_name: Fosler-Lussier
-  file: 97.pdf
-  id: 97
-  title: How Self-Attention Improves Rare Class Performance in a Question-Answering
-    Dialogue Agent
-- abstract: Natural language generators (NLGs) for task-oriented dialogue typically
-    take a meaning representation (MR) as input, and are trained end-to-end with a
-    corpus of MR/utterance pairs, where the MRs cover a specific set of dialogue acts
-    and domain attributes. Creation of such datasets is labor intensive and time consuming.
-    Therefore, dialogue systems for new domain ontologies would benefit from using
-    data for pre-existing ontologies. Here we explore, for the first time, whether
-    it is possible to train an NLG for a new larger ontology using existing training
-    sets for the restaurant domain, where each set is based on a different ontology.
-    We create a new, larger combined ontology, and then train an NLG to produce utterances
-    covering it. For example, if one dataset has attributes for family friendly and
-    rating information, and the other has attributes for decor and service, our aim
-    is an NLG for the combined ontology that can produce utterances that realize values
-    for family friendly, rating, decor and service. Initial experiments with a baseline
-    neural sequence-to-sequence model show that this task is surprisingly challenging.
-    We then develop a novel self-training method that identifies (errorful) model
-    outputs, automatically constructs a corrected MR input to form a new (MR, utterance)
-    training pair, and then repeatedly adds these new instances back into the training
-    data. We then test the resulting model on a new test set. The result is a self-trained
-    model whose performance is an absolute 75.4\% improvement over the baseline model.
-    We also report a human qualitative evaluation of the final model showing that
-    it achieves high naturalness, semantic coherence and grammaticality.
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 1
-  authors:
-  - first_name: Lena
-    last_name: Reed
-  - first_name: Vrindavan
-    last_name: Harrison
-  - first_name: Shereen
-    last_name: Oraby
-  - first_name: Dilek
-    last_name: Hakkani-Tur
-  - first_name: Marilyn
-    last_name: Walker
-  file: 98.pdf
-  id: 98
-  title: 'Learning from Mistakes: Combining Ontologies via Self-Training for Dialogue
-    Generation'
-- abstract: This demo paper presents Emora STDM (State Transition Dialogue Manager),
-    a dialogue system development framework that provides novel workflows for rapid
-    prototyping of chat-based dialogue managers as well as collaborative development
-    of complex interactions. Our framework caters to a wide range of expertise levels
-    by supporting interoperability between two popular approaches, state machine and
-    information state, to dialogue management. Our Natural Language Expression package
-    allows seamless integration of pattern matching, custom NLP modules, and database
-    querying, that makes the workflows much more efficient. As a user study, we adopt
-    this framework to an interdisciplinary undergraduate course where students with
-    both technical and non-technical backgrounds are able to develop creative dialogue
-    managers in a short period of time.
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 1
-  authors:
-  - first_name: James
-    last_name: Finch
-    middle_name: D.
-  - first_name: Jinho
-    last_name: Choi
-    middle_name: D.
-  file: 100.pdf
-  id: 100
-  title: 'Emora STDM: A Versatile Framework for Innovative Dialogue System Development'
-- abstract: Emotion recognition in conversation (ERC) is an important topic for developing
-    empathetic machines in a variety of areas including social opinion mining, health-care
-    and so on. In this paper, we propose a method to model ERC task as sequence tagging
-    where a Conditional Random Field (CRF) layer is leveraged to learn the emotional
-    consistency in the conversation. We employ LSTM-based encoders that capture self
-    and inter-speaker dependency of interlocutors to generate contextualized utterance
-    representations which are fed into the CRF layer. For capturing long-range global
-    context, we use a multi-layer Transformer encoder to enhance the LSTM-based encoder.
-    Experiments show that our method benefits from modeling the emotional consistency
-    and outperforms the current state-of-the-art methods on multiple emotion classification
-    datasets.
-  attributes:
-    paper_type: short
-    presentation_type: poster
-    submitted_area: Area 2
-  authors:
-  - first_name: Yan
-    last_name: Wang
-  - first_name: Jiayu
-    last_name: Zhang
-  - first_name: Jun
-    last_name: Ma
-  - first_name: Shaojun
-    last_name: Wang
-  - first_name: Jing
-    last_name: Xiao
-  file: 102.pdf
-  id: 102
-  title: Contextualized Emotion Recognition in Conversation as Sequence Tagging
-- abstract: 'Task-oriented dialog systems rely on dialog state tracking (DST) to monitor
-    the user''s goal during the course of an interaction. Multi-domain and open-vocabulary
-    settings complicate the task considerably and demand scalable solutions. In this
-    paper we present a new approach to DST which makes use of various copy mechanisms
-    to fill slots with values. Our model has no need to maintain a list of candidate
-    values. Instead, all values are extracted from the dialog context on-the-fly.
-    A slot is filled by one of three copy mechanisms: (1) Span prediction may extract
-    values directly from the user input; (2) a value may be copied from a system inform
-    memory that keeps track of the system''s inform operations (3) a value may be
-    copied over from a different slot that is already contained in the dialog state
-    to resolve coreferences within and across domains. Our approach combines the advantages
-    of span-based slot filling methods with memory methods to avoid the use of value
-    picklists altogether. We argue that our strategy simplifies the DST task while
-    at the same time achieving state of the art performance on various popular evaluation
-    sets including Multiwoz 2.1, where we achieve a joint goal accuracy beyond 55%.'
-  attributes:
-    paper_type: short
-    presentation_type: oral
-    submitted_area: Area 2
-  authors:
-  - first_name: Michael
-    last_name: Heck
-  - first_name: Carel
-    last_name: Niekerk
-    middle_name: van
-  - first_name: Nurul
-    last_name: Lubis
-  - first_name: Christian
-    last_name: Geishauser
-  - first_name: Hsien-Chin
-    last_name: Lin
-  - first_name: Marco
-    last_name: Moresi
-  - first_name: Milica
-    last_name: Gasic
-  file: 103.pdf
-  id: 103
-  title: 'TripPy: A Triple Copy Strategy for Value Independent Neural Dialog State
-    Tracking'
+  - dblp_id: https://dblp.org/pid/99/8434
+    emails: simon.dobnik@gu.se
+    first_name: Simon
+    google_scholar_id: https://scholar.google.com/citations?user=Ie41FMAAAAAJ&hl=en
+    homepage: https://www.gu.se/en/about/find-staff/simondobnik
+    institution: University of Gothenburg
+    last_name: Dobnik
+    name: Simon Dobnik
+    orcid: https://orcid.org/0000-0002-4019-7966
+    semantic_scholar_id: https://www.semanticscholar.org/author/Simon-Dobnik/2995275
+    username: ~Simon_Dobnik1
+  decision: Accept (Oral)
+  file: 22.pdf
+  id: 22
+  openreview_id: vhVz71_RliX
+  pdf_file: b70f0b76af02d72bc19f2402874d891a7d887c5b.pdf
+  title: On the role of resources in the age of large language models

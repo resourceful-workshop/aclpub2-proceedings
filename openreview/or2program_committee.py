@@ -93,13 +93,13 @@ program_committee = extract_or_data(client_acl, regex="/Program_Chairs")
 
 # get SACs
 or2acl = {} # You can use this dictionary to replace OpenReview field names with others you want to use in the proceedings
-program_committee.extend(extract_or_data(client_acl, regex="/"+use_tracks+"Senior_Area_Chairs", or2acl=or2acl))
+program_committee.extend(extract_or_data(client_acl, regex="/Senior_Area_Chairs/.*", or2acl=or2acl))
 
 # get ACs
-program_committee.extend(extract_or_data(client_acl, regex="/"+use_tracks+"Area_Chairs", or2acl=or2acl))
+program_committee.extend(extract_or_data(client_acl, regex="/Area_Chairs/.*", or2acl=or2acl))
 
 # get reviewers
-aux = extract_or_data(client_acl, regex="/"+use_tracks+"Official_Review", or2acl=or2acl)
+aux = extract_or_data(client_acl, regex="/Official_Review/.*", or2acl=or2acl)
 for reviewer in aux:
     reviewer["type"]="name_block"
 program_committee.extend(aux)

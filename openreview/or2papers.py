@@ -46,10 +46,10 @@ def main(username, password, venue, download_all, download_pdfs):
         d.forum: d
         for d in list(
             openreview.tools.iterget_notes(
-                client_acl, invitation=venue + "/Paper.*/-/Decision"
+                client_acl, invitation=venue + "/Paper.*"
             )
         )
-        if "accept" in d.content["decision"].lower()
+        if d.content["title"] == "Paper Decision" and "accept" in d.content["decision"].lower()
     }
 
     papers = []
