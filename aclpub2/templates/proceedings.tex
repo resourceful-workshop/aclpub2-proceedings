@@ -79,10 +79,10 @@
 \vspace*{2cm}
 \noindent
 
-{\Large The \VAR{conference.anthology_venue_id} organizers gratefully acknowledge the support from the following sponsors.}
-\bigskip
+%{\Large The \VAR{conference.anthology_venue_id} organizers gratefully acknowledge the support from the following sponsors.}
+%\bigskip
 
-\vspace*{1cm}
+%\vspace*{1cm}
 
 \BLOCK{macro generate_sponsor_tier(tier)}
   \begin{samepage}
@@ -93,7 +93,7 @@
   \BLOCK{for logo_batched in tier.logos|batch(4)}
     \BLOCK{for logo in logo_batched}
       \begin{minipage}[c][0.21\linewidth][c]{0.21\linewidth}
-        \includegraphics[width=\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
+        \includegraphics[width=2.5\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
       \end{minipage}\hspace{0.05\linewidth}
     \BLOCK{endfor}
 
