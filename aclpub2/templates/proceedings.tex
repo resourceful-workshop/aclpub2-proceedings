@@ -19,6 +19,19 @@
 \usepackage{times}
 \usepackage[english,latin]{babel}
 
+\usepackage{transparent}
+\usepackage[
+  firstpage=True,
+  placement=center,
+  angle=0,
+  color=black!40,
+  scale=1,
+  hshift=0,
+  vshift=0,
+  opacity=1,
+  position={8cm,-12cm}
+  ]{background}
+
 \hypersetup{
     colorlinks,
     linktoc=all,
@@ -51,18 +64,25 @@
 % Cover %
 %%%%%%%%%
 \begin{titlepage}
+
+  %CenterWallPaper{1}{/Users/xilini/aclpub2_proceedings/resourceful-2023/prefaces/cover.jpg}
+  \backgroundsetup{
+            contents={\includegraphics{/Users/xilini/aclpub2_proceedings/resourceful-2023/prefaces/coversmall.jpg}}
+        }
+  
   \begin{center}
     \vspace{1.5cm}
 
-    {\LARGE \VAR{conference.anthology_venue_id} \VAR{conference.start_date.year}}
+    {\LARGE \textcolor{white}{\VAR{conference.anthology_venue_id} \VAR{conference.start_date.year}}}
 
     \vspace*{65mm}
 
-    {\bf\LARGE \VAR{conference.event_name}}
+    \vspace*{2cm}
+    {\bf\huge \transparent{2}\textcolor{white}{\VAR{conference.event_name}}}
 
-    \vspace*{5cm}
+    \vspace*{7cm}
 
-    {\bf\LARGE \VAR{conference.cover_subtitle}}
+    {\bf\LARGE \textcolor{white}{\VAR{conference.cover_subtitle}}}
 
     \vfill
 
