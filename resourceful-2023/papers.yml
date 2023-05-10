@@ -14,9 +14,10 @@
     this suggest that much of the tech-related work on sign languages -- heavily under-researched
     and under-resourced languages -- is conducted without collaboration and consultation
     with deaf communities and experts, against ethical recommendations.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: carl.borstell@uib.no
@@ -48,9 +49,10 @@
     IAA has improved during the annotation process. The openly available corpus contains
     32,524 tokens of which sense annotations are given for all content words, amounting
     to 7,322 nouns, 3,099 verbs, 2,626 adjectives, and 1,677 adverbs.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: poster
     submitted_area: null
   authors:
   - dblp_id: https://dblp.org/pid/15/1759
@@ -118,9 +120,10 @@
     paper. Our research shows that state-of-the-art neural models can be used with
     endangered languages with the only requirement being a dictionary between the
     endangered language and a majority language.'
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: poster
     submitted_area: null
   authors:
   - emails: khldalnajjar@gmail.com
@@ -163,9 +166,10 @@
     \ fine-tuned for semantic textual similarity.\nPreliminary experiments on a small\
     \ test set from Swedish governmental reports show promising results in comparison\
     \ to two simple baselines."
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: luise.durlich@ri.se
@@ -218,9 +222,10 @@
     performance. This raises questions about the role of machine translation and the
     use of natural language inference (NLI) as well as parallel corpora for measuring
     English-Swedish language transfer. '
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: felix.morger@gu.se
@@ -245,9 +250,10 @@
     report on experiments with substituting words both inside and outside of sentiment
     annotations, and we also present an error analysis, discussing some of the potential
     pitfalls of using MLM-based DA for SSA, and suggest directions for future work.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: poster
     submitted_area: null
   authors:
   - emails: larkkinn@gmail.com
@@ -293,9 +299,10 @@
     of more than 5000 hours of transcribed speech is produced with limited human effort.
     Since parliamentary data is public domain, the dataset can be shared freely without
     any restrictions.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: per.solberg@nb.no
@@ -339,9 +346,10 @@
     Open Multilingual Wordnet.  Such vectors perform surprisingly well on common word
     similarity benchmarks, and yet they are transparent, interpretable, and the information
     contained within them has a clear provenance.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: poster
     submitted_area: null
   authors:
   - emails: roussel@linguistics.rub.de
@@ -369,9 +377,10 @@
     offers a semantic repository of information on SL data that could be accessed
     for supporting the creation of datasets for training or evaluating NLP applications
     that involve SLs.  '
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: poster
     submitted_area: null
   authors:
   - dblp_id: https://dblp.org/pid/05/6145
@@ -404,9 +413,10 @@
     neural model positively impacts performance in the translation tasks. The results
     of the tagging task are limited, but provide a methodological framework for further
     research into tagging sign language gloss data. '
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: euan.mcgill@upf.edu
@@ -460,9 +470,10 @@
     both clausal and non-clausal negation, allows for analyzing and comparing models''
     abilities to treat several different types of negation. We also present a case-study,
     applying several neural SA models to the diagnostic data. '
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: pettemae@ifi.uio.no
@@ -509,9 +520,10 @@
     systems, and speech recognition software. The OMOLO project demonstrates the potential
     of computational linguistics in preserving and revitalizing endangered languages
     and can serve as a blueprint for similar initiatives.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: poster
     submitted_area: null
   authors:
   - emails: so-miyagawa@ninjal.ac.jp
@@ -520,12 +532,12 @@
     last_name: Miyagawa
     name: So Miyagawa
     username: ~So_Miyagawa1
-  - emails: kanji_kato@nii.ac.jp
-    first_name: kanji_kato@nii.ac.jp
+  - emails: kanji\_kato@nii.ac.jp
+    first_name: kanji\_kato@nii.ac.jp
     institution: NA
-    last_name: kanji_kato@nii.ac.jp
-    name: kanji_kato@nii.ac.jp
-    username: kanji_kato@nii.ac.jp
+    last_name: kanji\_kato@nii.ac.jp
+    name: kanji\_kato@nii.ac.jp
+    username: kanji\_kato@nii.ac.jp
   - emails: miho.zlazli@gmail.com
     first_name: miho.zlazli@gmail.com
     institution: NA
@@ -570,9 +582,10 @@
 
     Our results suggest that there are resourceful alternatives to language-specific
     pre-training when creating useful LLMs for small languages.'
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: poster
     submitted_area: null
   authors:
   - emails: oskar.holmstrom@liu.se
@@ -617,9 +630,10 @@
     of loanwords. We show that both these techniques can be useful for the detection
     of such patterns. Finally, we inspect the plural suffix -ЛАр [-LAr] to observe
     some of the variation in morphology between native and foreign words.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: short
+    presentation_type: poster
     submitted_area: null
   authors:
   - emails: pettemae@ifi.uio.no
@@ -656,9 +670,10 @@
     no single part in the models would be the primary source for the knowledge of
     syntactic complexity. But some norms show a higher degree of sensitivity to syntactic
     complexity, depending on the language and model used.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: poster
     submitted_area: null
   authors:
   - dblp_id: https://dblp.org/pid/211/7416
@@ -692,9 +707,10 @@
     segmenting petitions according to their rhetorical structure. We find that the
     use of rules, word embeddings, and especially keywords can give promising results
     for this task.
+  archival: True
   attributes:
-    paper_type: N/A
-    presentation_type: N/A
+    paper_type: long
+    presentation_type: oral
     submitted_area: null
   authors:
   - emails: ellinor.lindqvist@lingfil.uu.se
@@ -740,6 +756,7 @@
     a manually-annotated data set and a publicly available gaze-follow dataset. Compared
     to previously reported methods our model performs better with the closest angular
     error to that of a human annotator.
+  archival: False
   attributes:
     paper_type: N/A
     presentation_type: N/A
@@ -780,6 +797,7 @@
     on training large models by referring to our work on under-resourced scenarios
     which we believe also informs work on training “well- resourced languages and
     domains.
+  archival: False
   attributes:
     paper_type: N/A
     presentation_type: N/A
