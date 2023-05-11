@@ -619,8 +619,7 @@
   id: 17
   openreview_id: DGgEZQe9Bh
   pdf_file: 7f29effe4fcbf086099ea5dbbf60f628492baf5e.pdf
-  title: 'Bridging the Resource Gap: Exploring the Efficacy of English and Multilingual
-    LLMs for Swedish'
+  title: 'Bridging the Resource Gap: Exploring the Efficacy of English and Multilingual LLMs for Swedish'
 - abstract: Obtaining information about loan words and irregular morphological patterns
     can be difficult for low-resource languages. Using Sakha as an example,  we show
     that it is possible to exploit known phonemic regularities such as vowel harmony

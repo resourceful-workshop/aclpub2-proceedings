@@ -2,9 +2,8 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage[a4paper,top=2cm,bottom=3cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
-\usepackage{hyperref}
 \usepackage{eurosym}
-
+\usepackage{hyperref}
 
 %\usepackage[T1]{fontenc}
 % For Vietnamese characters
@@ -94,7 +93,7 @@
     {\LARGE \textcolor{white}{Tórshavn, Faroe Islands}}
 
     \vspace*{2cm}
-    {\LARGE \textcolor{white}{Editors: Nikolai Ilinykh, Felix Morger, Simon Dobnik, Dana Dannélls}}
+    {\LARGE \textcolor{white}{Editors: Dana Dannélls, Simon Dobnik, Nikolai Ilinykh, Beáta Megyesi, Felix Morger, Joakim Nivre}}
     \vspace{-1cm}
 
   \end{center}
@@ -124,9 +123,8 @@
     \BLOCK{for logo in logo_batched}
       \begin{minipage}[c][0.21\linewidth][c]{0.21\linewidth}
         \includegraphics[width=2.5\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
-      \end{minipage}\hspace{0.05\linewidth}
+      \end{minipage}\linebreak
     \BLOCK{endfor}
-
   \BLOCK{endfor}
   \end{samepage}
 \BLOCK{endmacro}
