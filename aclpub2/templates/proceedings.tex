@@ -440,7 +440,8 @@ ISBN \VAR{conference.isbn}
 \setcounter{page}{1}
  \renewcommand{\headrulewidth}{0pt}
 \BLOCK{for paper in archival_papers}
-  \addcontentsline{toc}{section}{TEMPLATE_TITLE}
+\phantomsection
+  \addcontentsline{toc}{section}{\emph{\VAR{paper.title}}}
   \AddToShipoutPicture*{
     \setlength{\unitlength}{1mm}
     \footnotesize
