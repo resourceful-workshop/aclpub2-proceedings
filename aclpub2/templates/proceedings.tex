@@ -123,9 +123,19 @@
   \nopagebreak
   \BLOCK{for logo_batched in tier.logos|batch(4)}
     \BLOCK{for logo in logo_batched}
-      \begin{minipage}[c][0.4\linewidth][c]{0.21\linewidth}
-        \includegraphics[width=\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
-      \end{minipage}\hspace{0.2\linewidth}
+    \BLOCK{if logo is equalto('sbx-logo.pdf')}
+    \begin{minipage}[c][0.21\linewidth][c]{0.21\linewidth}
+      \includegraphics[width=2\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
+    \end{minipage}\hspace{0.2\linewidth}
+    \BLOCK{elif logo is equalto('CLASP-orange.pdf')}
+    \begin{minipage}[c][0.21\linewidth][c]{0.21\linewidth}
+    \includegraphics[width=2\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
+    \end{minipage}\hspace{0.2\linewidth}
+    \BLOCK{else}
+    \begin{minipage}[c][0.21\linewidth][c]{0.21\linewidth}
+    \includegraphics[width=\linewidth]{\VAR{root}/sponsor_logos/\VAR{logo}}
+    \end{minipage}\hspace{0.2\linewidth}
+    \BLOCK{endif}
     \BLOCK{endfor}
   \BLOCK{endfor}
   \end{samepage}
