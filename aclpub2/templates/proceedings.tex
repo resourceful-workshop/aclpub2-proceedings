@@ -58,6 +58,11 @@
 % General use macros
 \BLOCK{macro committee_member(member)}\VAR{member.first_name} \BLOCK{if member.middle_name is defined}\VAR{member.middle_name} \BLOCK{endif}\VAR{member.last_name}\BLOCK{if member.institution is defined}, \VAR{member.institution}\BLOCK{endif}\BLOCK{endmacro}
 
+
+\usepackage{xcolor}
+
+\definecolor{falured}{rgb}{0.48, 0.1, 0.1}
+
 \begin{document}
 
 %%%%%%%%%
@@ -73,19 +78,19 @@
   \begin{center}
     \vspace{1.5cm}
 
-    {\LARGE \textbf{\textcolor{white}{\VAR{conference.anthology_venue_id} \VAR{conference.start_date.year}}}}
+    {\LARGE \textbf{\textcolor{falured}{\VAR{conference.anthology_venue_id} \VAR{conference.start_date.year}}}}
 
     \vspace*{65mm}
 
     \vspace*{3cm}
-    {\bf\huge \transparent{2}\textcolor{white}{\VAR{conference.event_name}}}
+    {\bf\huge \transparent{2}\textcolor{falured}{\VAR{conference.event_name}}}
 
     \vspace*{1cm}
 
-    {\bf\LARGE \textcolor{white}{\VAR{conference.cover_subtitle}}}
+    {\bf\LARGE \textcolor{falured}{\VAR{conference.cover_subtitle}}}
 
     \vfill
-    \vspace*{6cm}
+    \vspace*{7cm}
 
     {\LARGE \textcolor{white}{\VAR{conference_dates}, \VAR{conference.start_date.year}}}
 
@@ -93,8 +98,8 @@
 
     {\LARGE \textcolor{white}{Tórshavn, Faroe Islands}}
 
-    \vspace*{2cm}
-    {\LARGE \textcolor{white}{Editors: Dana Dannélls, Simon Dobnik, Nikolai Ilinykh, Beáta Megyesi, Felix Morger, Joakim Nivre}}
+    \vspace*{1cm}
+    {\LARGE \textcolor{white}{Editors: Nikolai Ilinykh, Felix Morger, Dana Dannélls, Simon Dobnik, Beáta Megyesi, Joakim Nivre}}
     \vspace{-1cm}
 
   \end{center}
@@ -182,7 +187,7 @@ Order copies of this and other ACL proceedings from:
 ISBN \VAR{conference.isbn}
 \vspace*{1cm}
 
-Editors: \\Dana Dannélls, Simon Dobnik, Nikolai Ilinykh, Beáta Megyesi, Felix Morger, Joakim Nivre
+Editors: \\Nikolai Ilinykh, Felix Morger, Dana Dannélls, Simon Dobnik, Beáta Megyesi, Joakim Nivre
 
 }
 \newpage
