@@ -8,11 +8,17 @@ end_date: 2023-05-22
 isbn: 978-1-959429-73-9
 location: Tórshavn, the Faroe Islands
 editors:
-  - first_name: Simon
-    last_name: Dobnik
   - first_name: Nikolai
     last_name: Ilinykh
   - first_name: Felix
     last_name: Morger
+  - first_name: Dana
+    last_name: Dannélls
+  - first_name: Simon
+    last_name: Dobnik
+  - first_name: Beáta
+    last_name: Megyesi
+  - first_name: Joakim
+    last_name: Nivre
 publisher: Association for Computational Linguistics
 #watermark_book_title: Proceedings of the Second Workshop on\\ Resources and Representations for Under-Resourced Languages and Domains (RESOURCEFUL-2023)
